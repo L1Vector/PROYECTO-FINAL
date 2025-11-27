@@ -1,0 +1,6 @@
+C:\Users\USER\Desktop\1EF_Registro\BIBLIOTECA_REGISTRA\bin\Debug\BIBLIOTECA_REGISTRA.dll
+C:\Users\USER\Desktop\1EF_Registro\BIBLIOTECA_REGISTRA\bin\Debug\BIBLIOTECA_REGISTRA.pdb
+C:\Users\USER\Desktop\1EF_Registro\BIBLIOTECA_REGISTRA\obj\Debug\BIBLIOTECA_REGISTRA.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\1EF_Registro\BIBLIOTECA_REGISTRA\obj\Debug\BIBLIOTECA_REGISTRA.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\1EF_Registro\BIBLIOTECA_REGISTRA\obj\Debug\BIBLIOTECA_REGISTRA.dll
+C:\Users\USER\Desktop\1EF_Registro\BIBLIOTECA_REGISTRA\obj\Debug\BIBLIOTECA_REGISTRA.pdb

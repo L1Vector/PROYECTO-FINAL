@@ -10,3 +10,9 @@ C:\Users\lvasq\Downloads\PROYECTOFINAL\Biblio_SysVentas\obj\Debug\Biblio_SysVent
 C:\Users\lvasq\Downloads\PROYECTOFINAL\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.csproj.CoreCompileInputs.cache
 C:\Users\lvasq\Downloads\PROYECTOFINAL\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.dll
 C:\Users\lvasq\Downloads\PROYECTOFINAL\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.pdb
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblio_SysVentas\bin\Debug\Biblio_SysVentas.dll
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblio_SysVentas\bin\Debug\Biblio_SysVentas.pdb
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.csproj.AssemblyReference.cache
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.csproj.CoreCompileInputs.cache
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.dll
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.pdb

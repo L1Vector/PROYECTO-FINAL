@@ -1,0 +1,12 @@
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\Biblio_SysVentas\bin\Debug\Biblio_SysVentas.dll
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\Biblio_SysVentas\bin\Debug\Biblio_SysVentas.pdb
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.csproj.AssemblyReference.cache
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.csproj.CoreCompileInputs.cache
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.dll
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.pdb
+C:\Users\lvasq\Downloads\PROYECTOFINAL\Biblio_SysVentas\bin\Debug\Biblio_SysVentas.dll
+C:\Users\lvasq\Downloads\PROYECTOFINAL\Biblio_SysVentas\bin\Debug\Biblio_SysVentas.pdb
+C:\Users\lvasq\Downloads\PROYECTOFINAL\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.csproj.AssemblyReference.cache
+C:\Users\lvasq\Downloads\PROYECTOFINAL\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.csproj.CoreCompileInputs.cache
+C:\Users\lvasq\Downloads\PROYECTOFINAL\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.dll
+C:\Users\lvasq\Downloads\PROYECTOFINAL\Biblio_SysVentas\obj\Debug\Biblio_SysVentas.pdb

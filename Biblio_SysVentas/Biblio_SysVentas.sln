@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblio_SysVentas", "Biblio_SysVentas.csproj", "{8C100632-45CB-4176-884D-5E3EF9E9F41B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C100632-45CB-4176-884D-5E3EF9E9F41B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C100632-45CB-4176-884D-5E3EF9E9F41B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C100632-45CB-4176-884D-5E3EF9E9F41B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C100632-45CB-4176-884D-5E3EF9E9F41B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {520CE10E-082F-489B-84EB-E1A329C231E7}
+	EndGlobalSection
+EndGlobal

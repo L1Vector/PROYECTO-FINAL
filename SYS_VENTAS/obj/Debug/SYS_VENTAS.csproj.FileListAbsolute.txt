@@ -1,0 +1,32 @@
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\SYS_VENTAS\bin\Debug\SYS_VENTAS.exe.config
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\SYS_VENTAS\bin\Debug\SYS_VENTAS.exe
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\SYS_VENTAS\bin\Debug\SYS_VENTAS.pdb
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\SYS_VENTAS\bin\Debug\Biblio_SysVentas.dll
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\SYS_VENTAS\bin\Debug\Biblio_SysVentas.pdb
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\SYS_VENTAS\obj\Debug\SYS_VENTAS.csproj.AssemblyReference.cache
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\SYS_VENTAS\obj\Debug\SYS_VENTAS.csproj.CoreCompileInputs.cache
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\SYS_VENTAS\obj\Debug\SYS_VENTAS.csproj.Up2Date
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\SYS_VENTAS\obj\Debug\SYS_VENTAS.exe
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\SYS_VENTAS\obj\Debug\SYS_VENTAS.pdb
+C:\Users\UPN\Desktop\SEMANA 14-8450\PROYECTOFINAL\SYS_VENTAS\obj\Debug\SYS_VENTAS.exe.config
+C:\Users\lvasq\Downloads\PROYECTOFINAL\SYS_VENTAS\bin\Debug\SYS_VENTAS.exe.config
+C:\Users\lvasq\Downloads\PROYECTOFINAL\SYS_VENTAS\bin\Debug\SYS_VENTAS.exe
+C:\Users\lvasq\Downloads\PROYECTOFINAL\SYS_VENTAS\bin\Debug\SYS_VENTAS.pdb
+C:\Users\lvasq\Downloads\PROYECTOFINAL\SYS_VENTAS\bin\Debug\Biblio_SysVentas.dll
+C:\Users\lvasq\Downloads\PROYECTOFINAL\SYS_VENTAS\bin\Debug\Biblio_SysVentas.pdb
+C:\Users\lvasq\Downloads\PROYECTOFINAL\SYS_VENTAS\obj\Debug\SYS_VENTAS.csproj.AssemblyReference.cache
+C:\Users\lvasq\Downloads\PROYECTOFINAL\SYS_VENTAS\obj\Debug\SYS_VENTAS.csproj.CoreCompileInputs.cache
+C:\Users\lvasq\Downloads\PROYECTOFINAL\SYS_VENTAS\obj\Debug\SYS_VENTAS.csproj.Up2Date
+C:\Users\lvasq\Downloads\PROYECTOFINAL\SYS_VENTAS\obj\Debug\SYS_VENTAS.exe
+C:\Users\lvasq\Downloads\PROYECTOFINAL\SYS_VENTAS\obj\Debug\SYS_VENTAS.pdb
+C:\Users\UPN\Downloads\Proyecto 1.0\PROYECTO-FINAL\bin\Debug\SYS_VENTAS.exe.config
+C:\Users\UPN\Downloads\Proyecto 1.0\PROYECTO-FINAL\bin\Debug\SYS_VENTAS.exe
+C:\Users\UPN\Downloads\Proyecto 1.0\PROYECTO-FINAL\bin\Debug\SYS_VENTAS.pdb
+C:\Users\UPN\Downloads\Proyecto 1.0\PROYECTO-FINAL\bin\Debug\Biblio_SysVentas.dll
+C:\Users\UPN\Downloads\Proyecto 1.0\PROYECTO-FINAL\bin\Debug\Biblio_SysVentas.pdb
+C:\Users\UPN\Downloads\Proyecto 1.0\PROYECTO-FINAL\obj\Debug\SYS_VENTAS.csproj.AssemblyReference.cache
+C:\Users\UPN\Downloads\Proyecto 1.0\PROYECTO-FINAL\obj\Debug\SYS_VENTAS.csproj.CoreCompileInputs.cache
+C:\Users\UPN\Downloads\Proyecto 1.0\PROYECTO-FINAL\obj\Debug\SYS_VENTAS.csproj.Up2Date
+C:\Users\UPN\Downloads\Proyecto 1.0\PROYECTO-FINAL\obj\Debug\SYS_VENTAS.exe
+C:\Users\UPN\Downloads\Proyecto 1.0\PROYECTO-FINAL\obj\Debug\SYS_VENTAS.pdb
+C:\Users\UPN\Downloads\Proyecto 1.0\PROYECTO-FINAL\obj\Debug\SYS_VENTAS.exe.config

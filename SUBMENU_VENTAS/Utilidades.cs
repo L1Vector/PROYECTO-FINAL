@@ -4,7 +4,7 @@ namespace SUBMENU_VENTAS
 {
     public static class Utilities
     {
-        // contador de productos (código P001, P002...)
+        // Contador de productos (código P001, P002...)
         private static int contadorProductos = 1;
 
         public static string GenerarCodigoProducto()
@@ -12,7 +12,9 @@ namespace SUBMENU_VENTAS
             return "P" + contadorProductos++.ToString("000");
         }
 
-        // Lector de caja que respeta ancho, no salta de línea y soporta Backspace
+        // ===================================
+        // CAJA DE TEXTO - USUARIO ESCRIBE
+        // ===================================
         public static string LeerCaja(int x, int y, int width = 15)
         {
             Console.BackgroundColor = ConsoleColor.Gray;
@@ -51,12 +53,34 @@ namespace SUBMENU_VENTAS
             return texto.Trim();
         }
 
-        // Leer DNI: 8 digitos, solo números
+        // ===================================
+        // CAJA DE SOLO LECTURA (NUEVA)
+        // ===================================
+        public static void DibujarCajaLectura(int x, int y, string texto, int width = 12)
+        {
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            Console.SetCursorPosition(x, y);
+            Console.Write(new string(' ', width));
+
+            if (texto.Length > width)
+                texto = texto.Substring(0, width);
+
+            Console.SetCursorPosition(x, y);
+            Console.Write(texto);
+
+            Console.ResetColor();
+        }
+
+        // ===================================
+        // DNI – 8 dígitos
+        // ===================================
         public static string LeerDNI(int x, int y)
         {
             while (true)
             {
-                string dni = LeerCaja(x, y, 8);
+                string dni = LeerCaja(x, y, 30);
 
                 if (dni.Length == 8 && long.TryParse(dni, out _))
                     return dni;
@@ -75,7 +99,9 @@ namespace SUBMENU_VENTAS
             }
         }
 
-        // Leer RUC: 11 digitos, solo numeros, no negativos
+        // ===================================
+        // RUC – 11 dígitos
+        // ===================================
         public static string LeerRUC(int x, int y)
         {
             while (true)
@@ -99,7 +125,9 @@ namespace SUBMENU_VENTAS
             }
         }
 
-        // Leer número (cantidad, precio): no negativo
+        // ===================================
+        // LEER NÚMERO (cantidad, precio)
+        // ===================================
         public static double LeerNumero(int x, int y, int width = 10)
         {
             while (true)
@@ -122,9 +150,9 @@ namespace SUBMENU_VENTAS
             }
         }
 
-        // ============================
-        // MENÚ ÚNICO GUARDAR / CANCELAR
-        // ============================
+        // ===================================
+        // MENÚ GUARDAR / CANCELAR (SIN CAMBIOS)
+        // ===================================
         public static bool MenuGuardarCancelar(int y = 22, int xGuardar = 30, int xCancelar = 50)
         {
             string[] opciones = { "GUARDAR", "CANCELAR" };
@@ -132,7 +160,7 @@ namespace SUBMENU_VENTAS
 
             while (true)
             {
-                // ---- DIBUJAR GUARDAR ----
+                // ---- GUARDAR ----
                 Console.SetCursorPosition(xGuardar, y);
                 if (seleccionado == 1)
                 {
@@ -147,7 +175,7 @@ namespace SUBMENU_VENTAS
                 Console.Write(" GUARDAR ");
                 Console.ResetColor();
 
-                // ---- DIBUJAR CANCELAR ----
+                // ---- CANCELAR ----
                 Console.SetCursorPosition(xCancelar, y);
                 if (seleccionado == 0)
                 {
@@ -162,33 +190,35 @@ namespace SUBMENU_VENTAS
                 Console.Write(" CANCELAR ");
                 Console.ResetColor();
 
-                // Asegúrate de que 'seleccionado' sea 0 o 1 antes de entrar a esta sección.
-
-                // ---- LEER TECLA ----
                 ConsoleKey tecla = Console.ReadKey(true).Key;
 
                 if (tecla == ConsoleKey.LeftArrow)
                 {
-
                     if (seleccionado == 1)
-                    {
                         seleccionado--;
-                    }
                 }
                 else if (tecla == ConsoleKey.RightArrow)
                 {
-
-                    {
-                        seleccionado++;
-                    }
+                    seleccionado++;
+                    if (seleccionado > 1)
+                        seleccionado = 1;
                 }
                 else if (tecla == ConsoleKey.Enter)
                 {
-
-                    return seleccionado == 0;
+                    return seleccionado == 0; // true = guardar, false = cancelar
                 }
-
             }
         }
+
+
+        public static void LimpiarZonaTrabajo()
+        {
+            for (int y = 5; y <= 25; y++)
+            {
+                Console.SetCursorPosition(1, y);
+                Console.Write(new string(' ', 88));
+            }
+        }
+
     }
 }

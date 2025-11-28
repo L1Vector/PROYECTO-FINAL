@@ -6,16 +6,13 @@ namespace SUBMENU_VENTAS
     {
         public static void Mostrar()
         {
-            Console.Clear();
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.Clear();
-            Console.ResetColor();
+            Utilities.LimpiarZonaTrabajo();
+            Console.SetCursorPosition(30, 1);
+            Console.Write("FACTURA");
 
-            DibujarMarco("FACTURA");
 
-            // ===============================
             // DATOS PRINCIPALES
-            // ===============================
+
             Console.SetCursorPosition(8, 6);
             Console.Write("RUC:");
             string ruc = Utilities.LeerRUC(15, 6);
@@ -31,9 +28,9 @@ namespace SUBMENU_VENTAS
             Console.SetCursorPosition(76, 6);
             Console.Write(nroFactura);
 
-            // ===============================
+
             // TABLA PRODUCTO
-            // ===============================
+
             Console.SetCursorPosition(8, 11); Console.Write("CODIGO");
             Console.SetCursorPosition(24, 11); Console.Write("PRODUCTO");
             Console.SetCursorPosition(50, 11); Console.Write("CANTIDAD");
@@ -53,9 +50,9 @@ namespace SUBMENU_VENTAS
             Console.SetCursorPosition(76, 13);
             Console.Write(monto.ToString("F2"));
 
-            // ===============================
+
             // VENDEDOR Y TOTAL
-            // ===============================
+
             Console.SetCursorPosition(8, 17);
             Console.Write("DNI VENDEDOR:");
             string dniVendedor = Utilities.LeerDNI(22, 17);
@@ -65,9 +62,9 @@ namespace SUBMENU_VENTAS
             Console.SetCursorPosition(69, 17);
             Console.Write(monto.ToString("F2"));
 
-            // ===============================
+
             // BOTONES FINALES
-            // ===============================
+
             bool guardar = Utilities.MenuGuardarCancelar();
 
             if (guardar)
@@ -99,22 +96,30 @@ namespace SUBMENU_VENTAS
         }
 
         // ===== MARCO =====
-        static void DibujarMarco(string titulo)
+
+    
+
+
+            public static void DibujarMarco()
         {
+            Console.BackgroundColor = ConsoleColor.Black;
+
             for (int i = 4; i <= 26; i++)
             {
                 Console.SetCursorPosition(6, i); Console.Write(" ");
-                Console.SetCursorPosition(118, i); Console.Write(" ");
+                Console.SetCursorPosition(86, i); Console.Write(" ");
             }
 
-            for (int i = 6; i <= 118; i++)
+            for (int i = 6; i <= 86; i++)
             {
                 Console.SetCursorPosition(i, 4); Console.Write(" ");
                 Console.SetCursorPosition(i, 26); Console.Write(" ");
             }
 
-            Console.SetCursorPosition(44, 5);
-            Console.Write(titulo);
+            Console.SetCursorPosition(34, 5);
+            Console.Write("BOLETA DE VENTA");
+
+            Console.ResetColor();
         }
     }
 }

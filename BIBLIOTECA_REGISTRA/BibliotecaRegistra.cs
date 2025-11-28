@@ -19,11 +19,8 @@ namespace BIBLIOTECA_REGISTRA
         {
             int numFilas = original.GetLength(0);
             int numCols = original.GetLength(1);
-            int nuevaNumFilas = numFilas + 1;
+            string[,] nuevoArray = new string[numFilas + 1, numCols];
 
-            string[,] nuevoArray = new string[nuevaNumFilas, numCols];
-
-            // Copiar los datos del arreglo original
             for (int i = 0; i < numFilas; i++)
             {
                 for (int j = 0; j < numCols; j++)
@@ -32,7 +29,6 @@ namespace BIBLIOTECA_REGISTRA
                 }
             }
 
-            // Insertar la nueva fila en el último índice
             for (int j = 0; j < numCols; j++)
             {
                 nuevoArray[numFilas, j] = nuevaFila[j];
@@ -41,11 +37,9 @@ namespace BIBLIOTECA_REGISTRA
             return nuevoArray;
         }
 
-        // Función auxiliar para limpiar un área específica de la consola.
         private static void LimpiarAreaRegistro(int filaInicial)
         {
             int anchoArea = 88;
-
             for (int i = filaInicial; i <= 25; i++)
             {
                 Console.SetCursorPosition(1, i);
@@ -54,171 +48,109 @@ namespace BIBLIOTECA_REGISTRA
             Console.SetCursorPosition(2, filaInicial);
         }
 
-        // Nueva función auxiliar para mostrar error, esperar tecla y limpiar el mensaje de error.
         private static void MostrarErrorYContinuar(string mensaje, int filaError)
         {
-            // Posición para el mensaje de error (una fila debajo del input)
             Console.SetCursorPosition(2, filaError);
-            Console.ForegroundColor = ConsoleColor.White;
             Console.Write($" Error: {mensaje} ");
             Console.ResetColor();
 
-            // Mensaje para continuar
             Console.SetCursorPosition(2, filaError + 1);
             Console.WriteLine("Presione cualquier tecla para reintentar...");
-            Console.ReadKey(true); // Espera la pulsación de una tecla
+            Console.ReadKey(true);
 
-            // Limpiar la línea del mensaje de error y la línea de la indicación
             Console.SetCursorPosition(2, filaError);
             Console.Write(new string(' ', 86));
             Console.SetCursorPosition(2, filaError + 1);
             Console.Write(new string(' ', 86));
         }
 
-        // --- 3. REGISTRAR PRODUCTO ---
+        private static string ObtenerEntradaValidada(string mensaje, int fila, Func<string, string> validadorAdicional = null)
+        {
+            while (true)
+            {
+                Console.SetCursorPosition(2, fila);
+                Console.Write(new string(' ', 86));
+                Console.SetCursorPosition(2, fila);
+                Console.Write(mensaje);
+                string input = Console.ReadLine().Trim();
+
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    MostrarErrorYContinuar("Este campo no puede estar vacío.", fila + 1);
+                    continue;
+                }
+
+                if (validadorAdicional != null)
+                {
+                    string error = validadorAdicional(input);
+                    if (!string.IsNullOrEmpty(error))
+                    {
+                        MostrarErrorYContinuar(error, fila + 1);
+                        continue;
+                    }
+                }
+
+                return input;
+            }
+        }
+
         public static void RegistrarProducto()
         {
-            int FILA_INICIO_FORMULARIO = 5;
-
+            const int FILA_INICIO_FORMULARIO = 5;
             string[] nuevoProducto = new string[5];
             string titulo = "R E G I S T R A R   P R O D U C T O S";
 
             LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
             int filaActual = FILA_INICIO_FORMULARIO;
 
-            // Centramos el título
             Console.SetCursorPosition(2 + (86 - titulo.Length) / 2, filaActual++);
             Console.WriteLine(titulo);
-            filaActual++; // Dejamos una línea de espacio
+            filaActual++;
 
-            // 1. CÓDIGO
             int filaInputCodigo = filaActual;
-            while (true)
+            nuevoProducto[0] = ObtenerEntradaValidada("Ingrese Código del Producto (Único): ", filaInputCodigo, (codigo) =>
             {
-                Console.SetCursorPosition(2, filaInputCodigo);
-                Console.Write(new string(' ', 86)); // Limpiar línea antes de escribir
-                Console.SetCursorPosition(2, filaInputCodigo);
-                Console.Write("Ingrese Código del Producto (Único): ");
-                string codigo = Console.ReadLine().Trim().ToUpper();
-
-                bool errorEncontrado = false;
-                if (string.IsNullOrWhiteSpace(codigo))
+                string codigoUpper = codigo.ToUpper();
+                for (int i = 0; i < Productos.GetLength(0); i++)
                 {
-                    MostrarErrorYContinuar("El código no puede estar vacío.", filaInputCodigo + 1);
-                    errorEncontrado = true;
+                    if (Productos[i, 0].Equals(codigoUpper)) { return "El código de producto ya existe y debe ser único."; }
                 }
-                else
-                {
-                    for (int i = 0; i < Productos.GetLength(0); i++)
-                    {
-                        if (Productos[i, 0].Equals(codigo))
-                        {
-                            MostrarErrorYContinuar("El código de producto ya existe y debe ser único.", filaInputCodigo + 1);
-                            errorEncontrado = true;
-                            break;
-                        }
-                    }
-                }
-
-                if (!errorEncontrado) { nuevoProducto[0] = codigo; break; }
-            }
+                return null;
+            }).ToUpper();
             filaActual = filaInputCodigo + 2;
 
-            // 2. NOMBRE
             int filaInputNombre = filaActual;
-            while (true)
+            nuevoProducto[1] = ObtenerEntradaValidada("Ingrese Nombre del Producto (Único): ", filaInputNombre, (nombre) =>
             {
-                Console.SetCursorPosition(2, filaInputNombre);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputNombre);
-                Console.Write("Ingrese Nombre del Producto (Único): ");
-                string nombre = Console.ReadLine().Trim().ToUpper();
-
-                bool errorEncontrado = false;
-                if (string.IsNullOrWhiteSpace(nombre))
+                string nombreUpper = nombre.ToUpper();
+                for (int i = 0; i < Productos.GetLength(0); i++)
                 {
-                    MostrarErrorYContinuar("El nombre no puede estar vacío.", filaInputNombre + 1);
-                    errorEncontrado = true;
+                    if (Productos[i, 1].Equals(nombreUpper)) { return "El nombre de producto ya existe y debe ser único."; }
                 }
-                else
-                {
-                    for (int i = 0; i < Productos.GetLength(0); i++)
-                    {
-                        if (Productos[i, 1].Equals(nombre))
-                        {
-                            MostrarErrorYContinuar("El nombre de producto ya existe y debe ser único.", filaInputNombre + 1);
-                            errorEncontrado = true;
-                            break;
-                        }
-                    }
-                }
-
-                if (!errorEncontrado) { nuevoProducto[1] = nombre; break; }
-            }
+                return null;
+            }).ToUpper();
             filaActual = filaInputNombre + 2;
 
-            // 3. CATEGORÍA
             int filaInputCategoria = filaActual;
-            while (true)
-            {
-                Console.SetCursorPosition(2, filaInputCategoria);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputCategoria);
-                Console.Write("Ingrese Categoría: ");
-                string categoria = Console.ReadLine().Trim();
-                if (string.IsNullOrWhiteSpace(categoria))
-                {
-                    MostrarErrorYContinuar("La categoría no puede estar vacía.", filaInputCategoria + 1);
-                }
-                else { nuevoProducto[2] = categoria; break; }
-            }
+            nuevoProducto[2] = ObtenerEntradaValidada("Ingrese Categoría: ", filaInputCategoria);
             filaActual = filaInputCategoria + 2;
 
-            // 4. STOCK
             int filaInputStock = filaActual;
-            while (true)
+            nuevoProducto[3] = ObtenerEntradaValidada("Ingrese Stock: ", filaInputStock, (input) =>
             {
-                Console.SetCursorPosition(2, filaInputStock);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputStock);
-                Console.Write("Ingrese Stock: ");
-                string inputStock = Console.ReadLine().Trim();
-
-                if (int.TryParse(inputStock, out int stock) && stock >= 0)
-                {
-                    nuevoProducto[3] = stock.ToString();
-                    break;
-                }
-                else
-                {
-                    MostrarErrorYContinuar("El stock debe ser un número entero positivo o cero.", filaInputStock + 1);
-                }
-            }
+                if (int.TryParse(input, out int stock) && stock >= 0) { return null; }
+                return "El stock debe ser un número entero positivo o cero.";
+            });
             filaActual = filaInputStock + 2;
 
-            // 5. PRECIO UNITARIO
             int filaInputPrecio = filaActual;
-            while (true)
+            nuevoProducto[4] = ObtenerEntradaValidada("Ingrese Precio Unitario: ", filaInputPrecio, (input) =>
             {
-                Console.SetCursorPosition(2, filaInputPrecio);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputPrecio);
-                Console.Write("Ingrese Precio Unitario: ");
-                string inputPrecio = Console.ReadLine().Trim();
-
-                if (decimal.TryParse(inputPrecio, out decimal precio) && precio > 0)
-                {
-                    nuevoProducto[4] = precio.ToString();
-                    break;
-                }
-                else
-                {
-                    MostrarErrorYContinuar("El precio debe ser un número decimal positivo.", filaInputPrecio + 1);
-                }
-            }
+                if (decimal.TryParse(input, out decimal precio) && precio > 0) { return null; }
+                return "El precio debe ser un número decimal positivo.";
+            });
             filaActual = filaInputPrecio + 2;
 
-            // Añadir el nuevo producto al arreglo global
             Productos = AgregarFila(Productos, nuevoProducto);
 
             LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
@@ -230,156 +162,53 @@ namespace BIBLIOTECA_REGISTRA
             LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
         }
 
-        // --- 4. REGISTRAR CLIENTE ---
         public static void RegistrarCliente()
         {
-            int FILA_INICIO_FORMULARIO = 5;
+            const int FILA_INICIO_FORMULARIO = 5;
             string[] nuevoCliente = new string[6];
             string titulo = "R E G I S T R A R   C L I E N T E S";
 
             LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
             int filaActual = FILA_INICIO_FORMULARIO;
 
-            // Centramos el título
             Console.SetCursorPosition(2 + (86 - titulo.Length) / 2, filaActual++);
             Console.WriteLine(titulo);
             filaActual++;
 
-            // 1. DNI
             int filaInputDni = filaActual;
-            while (true)
+            nuevoCliente[0] = ObtenerEntradaValidada("Ingrese DNI Cliente (Único, 8 dígitos): ", filaInputDni, (dni) =>
             {
-                Console.SetCursorPosition(2, filaInputDni);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputDni);
-                Console.Write("Ingrese DNI Cliente (Único, 8 dígitos): ");
-                string dni = Console.ReadLine().Trim();
-
-                bool errorEncontrado = false;
-                if (string.IsNullOrWhiteSpace(dni))
+                if (!dni.All(char.IsDigit) || dni.Length != 8) { return "El DNI debe contener 8 dígitos numéricos exactos."; }
+                for (int i = 0; i < Clientes.GetLength(0); i++)
                 {
-                    MostrarErrorYContinuar("El DNI no puede estar vacío.", filaInputDni + 1);
-                    errorEncontrado = true;
+                    if (Clientes[i, 0].Equals(dni)) { return "El DNI de cliente ya existe y debe ser único."; }
                 }
-                else if (!dni.All(char.IsDigit))
-                {
-                    MostrarErrorYContinuar("El DNI debe contener solo números.", filaInputDni + 1);
-                    errorEncontrado = true;
-                }
-                else if (dni.Length != 8)
-                {
-                    MostrarErrorYContinuar("El DNI debe tener exactamente 8 dígitos.", filaInputDni + 1);
-                    errorEncontrado = true;
-                }
-                else
-                {
-                    for (int i = 0; i < Clientes.GetLength(0); i++)
-                    {
-                        if (Clientes[i, 0].Equals(dni))
-                        {
-                            MostrarErrorYContinuar("El DNI de cliente ya existe y debe ser único.", filaInputDni + 1);
-                            errorEncontrado = true;
-                            break;
-                        }
-                    }
-                }
-
-                if (!errorEncontrado) { nuevoCliente[0] = dni; break; }
-            }
+                return null;
+            });
             filaActual = filaInputDni + 2;
 
-            // 2. NOMBRES
             int filaInputNombres = filaActual;
-            while (true)
-            {
-                Console.SetCursorPosition(2, filaInputNombres);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputNombres);
-                Console.Write("Ingrese Nombres: ");
-                string nombres = Console.ReadLine().Trim();
-                if (string.IsNullOrWhiteSpace(nombres))
-                {
-                    MostrarErrorYContinuar("Los nombres no pueden estar vacíos.", filaInputNombres + 1);
-                }
-                else { nuevoCliente[1] = nombres; break; }
-            }
+            nuevoCliente[1] = ObtenerEntradaValidada("Ingrese Nombres: ", filaInputNombres);
             filaActual = filaInputNombres + 2;
 
-            // 3. APELLIDOS
             int filaInputApellidos = filaActual;
-            while (true)
-            {
-                Console.SetCursorPosition(2, filaInputApellidos);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputApellidos);
-                Console.Write("Ingrese Apellidos: ");
-                string apellidos = Console.ReadLine().Trim();
-                if (string.IsNullOrWhiteSpace(apellidos))
-                {
-                    MostrarErrorYContinuar("Los apellidos no pueden estar vacíos.", filaInputApellidos + 1);
-                }
-                else { nuevoCliente[2] = apellidos; break; }
-            }
+            nuevoCliente[2] = ObtenerEntradaValidada("Ingrese Apellidos: ", filaInputApellidos);
             filaActual = filaInputApellidos + 2;
 
-            // 4. TELÉFONO
             int filaInputTelefono = filaActual;
-            while (true)
+            nuevoCliente[3] = ObtenerEntradaValidada("Ingrese Teléfono (9 dígitos): ", filaInputTelefono, (tel) =>
             {
-                Console.SetCursorPosition(2, filaInputTelefono);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputTelefono);
-                Console.Write("Ingrese Teléfono (9 dígitos): ");
-                string telefono = Console.ReadLine().Trim();
-
-                if (string.IsNullOrWhiteSpace(telefono))
-                {
-                    MostrarErrorYContinuar("El teléfono no puede estar vacío.", filaInputTelefono + 1);
-                }
-                else if (!telefono.All(char.IsDigit))
-                {
-                    MostrarErrorYContinuar("El teléfono debe contener solo números.", filaInputTelefono + 1);
-                }
-                else if (telefono.Length != 9)
-                {
-                    MostrarErrorYContinuar("El teléfono debe tener exactamente 9 dígitos.", filaInputTelefono + 1);
-                }
-                else { nuevoCliente[3] = telefono; break; }
-            }
+                if (!tel.All(char.IsDigit) || tel.Length != 9) { return "El teléfono debe contener 9 dígitos numéricos exactos."; }
+                return null;
+            });
             filaActual = filaInputTelefono + 2;
 
-            // 5. EMAIL
             int filaInputEmail = filaActual;
-            while (true)
-            {
-                Console.SetCursorPosition(2, filaInputEmail);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputEmail);
-                Console.Write("Ingrese Email: ");
-                string email = Console.ReadLine().Trim();
-                if (string.IsNullOrWhiteSpace(email))
-                {
-                    MostrarErrorYContinuar("El Email no puede estar vacío.", filaInputEmail + 1);
-                }
-                else { nuevoCliente[4] = email; break; }
-            }
+            nuevoCliente[4] = ObtenerEntradaValidada("Ingrese Email: ", filaInputEmail);
             filaActual = filaInputEmail + 2;
 
-            // 6. DIRECCIÓN
             int filaInputDireccion = filaActual;
-            while (true)
-            {
-                Console.SetCursorPosition(2, filaInputDireccion);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputDireccion);
-                Console.Write("Ingrese Dirección: ");
-                string direccion = Console.ReadLine().Trim();
-                if (string.IsNullOrWhiteSpace(direccion))
-                {
-                    MostrarErrorYContinuar("La dirección no puede estar vacía.", filaInputDireccion + 1);
-                }
-                else { nuevoCliente[5] = direccion; break; }
-            }
+            nuevoCliente[5] = ObtenerEntradaValidada("Ingrese Dirección: ", filaInputDireccion);
             filaActual = filaInputDireccion + 2;
 
             Clientes = AgregarFila(Clientes, nuevoCliente);
@@ -393,130 +222,53 @@ namespace BIBLIOTECA_REGISTRA
             LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
         }
 
-        // --- 5. REGISTRAR VENDEDORES ---
         public static void RegistrarVendedor()
         {
-            int FILA_INICIO_FORMULARIO = 5;
+            const int FILA_INICIO_FORMULARIO = 5;
             string[] nuevoVendedor = new string[5];
             string titulo = "R E G I S T R A R   V E N D E D O R E S";
 
             LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
             int filaActual = FILA_INICIO_FORMULARIO;
 
-            // Centramos el título
             Console.SetCursorPosition(2 + (86 - titulo.Length) / 2, filaActual++);
             Console.WriteLine(titulo);
             filaActual++;
 
-            // 1. CÓDIGO VENDEDOR
             int filaInputCodigo = filaActual;
-            while (true)
+            nuevoVendedor[0] = ObtenerEntradaValidada("Ingrese Código de Vendedor (Único): ", filaInputCodigo, (codigo) =>
             {
-                Console.SetCursorPosition(2, filaInputCodigo);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputCodigo);
-                Console.Write("Ingrese Código de Vendedor (Único): ");
-                string codigo = Console.ReadLine().Trim().ToUpper();
-
-                bool errorEncontrado = false;
-                if (string.IsNullOrWhiteSpace(codigo))
+                string codigoUpper = codigo.ToUpper();
+                for (int i = 0; i < Vendedores.GetLength(0); i++)
                 {
-                    MostrarErrorYContinuar("El código no puede estar vacío.", filaInputCodigo + 1);
-                    errorEncontrado = true;
+                    if (Vendedores[i, 0].Equals(codigoUpper)) { return "El código de vendedor ya existe y debe ser único."; }
                 }
-                else
-                {
-                    for (int i = 0; i < Vendedores.GetLength(0); i++)
-                    {
-                        if (Vendedores[i, 0].Equals(codigo))
-                        {
-                            MostrarErrorYContinuar("El código de vendedor ya existe y debe ser único.", filaInputCodigo + 1);
-                            errorEncontrado = true;
-                            break;
-                        }
-                    }
-                }
-
-                if (!errorEncontrado) { nuevoVendedor[0] = codigo; break; }
-            }
+                return null;
+            }).ToUpper();
             filaActual = filaInputCodigo + 2;
 
-            // 2. NOMBRES
             int filaInputNombres = filaActual;
-            while (true)
-            {
-                Console.SetCursorPosition(2, filaInputNombres);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputNombres);
-                Console.Write("Ingrese Nombres: ");
-                string nombres = Console.ReadLine().Trim();
-                if (string.IsNullOrWhiteSpace(nombres))
-                {
-                    MostrarErrorYContinuar("Los nombres no pueden estar vacíos.", filaInputNombres + 1);
-                }
-                else { nuevoVendedor[1] = nombres; break; }
-            }
+            nuevoVendedor[1] = ObtenerEntradaValidada("Ingrese Nombres: ", filaInputNombres);
             filaActual = filaInputNombres + 2;
 
-            // 3. APELLIDOS
             int filaInputApellidos = filaActual;
-            while (true)
-            {
-                Console.SetCursorPosition(2, filaInputApellidos);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputApellidos);
-                Console.Write("Ingrese Apellidos: ");
-                string apellidos = Console.ReadLine().Trim();
-                if (string.IsNullOrWhiteSpace(apellidos))
-                {
-                    MostrarErrorYContinuar("Los apellidos no pueden estar vacíos.", filaInputApellidos + 1);
-                }
-                else { nuevoVendedor[2] = apellidos; break; }
-            }
+            nuevoVendedor[2] = ObtenerEntradaValidada("Ingrese Apellidos: ", filaInputApellidos);
             filaActual = filaInputApellidos + 2;
 
-            // 4. SUELDO
             int filaInputSueldo = filaActual;
-            while (true)
+            nuevoVendedor[3] = ObtenerEntradaValidada("Ingrese Sueldo: ", filaInputSueldo, (input) =>
             {
-                Console.SetCursorPosition(2, filaInputSueldo);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputSueldo);
-                Console.Write("Ingrese Sueldo: ");
-                string inputSueldo = Console.ReadLine().Trim();
-
-                if (decimal.TryParse(inputSueldo, out decimal sueldo) && sueldo > 0)
-                {
-                    nuevoVendedor[3] = sueldo.ToString();
-                    break;
-                }
-                else
-                {
-                    MostrarErrorYContinuar("El sueldo debe ser un número positivo.", filaInputSueldo + 1);
-                }
-            }
+                if (decimal.TryParse(input, out decimal sueldo) && sueldo > 0) { return null; }
+                return "El sueldo debe ser un número positivo.";
+            });
             filaActual = filaInputSueldo + 2;
 
-            // 5. TELÉFONO
             int filaInputTelefono = filaActual;
-            while (true)
+            nuevoVendedor[4] = ObtenerEntradaValidada("Ingrese Teléfono (Solo números): ", filaInputTelefono, (tel) =>
             {
-                Console.SetCursorPosition(2, filaInputTelefono);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputTelefono);
-                Console.Write("Ingrese Teléfono (Solo números): ");
-                string telefono = Console.ReadLine().Trim();
-
-                if (string.IsNullOrWhiteSpace(telefono))
-                {
-                    MostrarErrorYContinuar("El teléfono no puede estar vacío.", filaInputTelefono + 1);
-                }
-                else if (!telefono.All(char.IsDigit))
-                {
-                    MostrarErrorYContinuar("El teléfono debe contener solo números.", filaInputTelefono + 1);
-                }
-                else { nuevoVendedor[4] = telefono; break; }
-            }
+                if (!tel.All(char.IsDigit)) { return "El teléfono debe contener solo números."; }
+                return null;
+            });
             filaActual = filaInputTelefono + 2;
 
             Vendedores = AgregarFila(Vendedores, nuevoVendedor);
@@ -530,168 +282,61 @@ namespace BIBLIOTECA_REGISTRA
             LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
         }
 
-        // --- 6. REGISTRAR PROVEEDOR ---
         public static void RegistrarProveedor()
         {
-            int FILA_INICIO_FORMULARIO = 5;
+            const int FILA_INICIO_FORMULARIO = 5;
             string[] nuevoProveedor = new string[7];
             string titulo = "R E G I S T R A R   P R O V E E D O R E S";
 
             LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
             int filaActual = FILA_INICIO_FORMULARIO;
 
-            // Centramos el título
             Console.SetCursorPosition(2 + (86 - titulo.Length) / 2, filaActual++);
             Console.WriteLine(titulo);
             filaActual++;
 
-            // 1. CÓDIGO PROVEEDOR
             int filaInputCodigo = filaActual;
-            while (true)
+            nuevoProveedor[0] = ObtenerEntradaValidada("Ingrese Código de Proveedor (Único): ", filaInputCodigo, (codigo) =>
             {
-                Console.SetCursorPosition(2, filaInputCodigo);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputCodigo);
-                Console.Write("Ingrese Código de Proveedor (Único): ");
-                string codigo = Console.ReadLine().Trim().ToUpper();
-
-                bool errorEncontrado = false;
-                if (string.IsNullOrWhiteSpace(codigo))
+                string codigoUpper = codigo.ToUpper();
+                for (int i = 0; i < Proveedores.GetLength(0); i++)
                 {
-                    MostrarErrorYContinuar("El código no puede estar vacío.", filaInputCodigo + 1);
-                    errorEncontrado = true;
+                    if (Proveedores[i, 0].Equals(codigoUpper)) { return "El código de proveedor ya existe y debe ser único."; }
                 }
-                else
-                {
-                    for (int i = 0; i < Proveedores.GetLength(0); i++)
-                    {
-                        if (Proveedores[i, 0].Equals(codigo))
-                        {
-                            MostrarErrorYContinuar("El código de proveedor ya existe y debe ser único.", filaInputCodigo + 1);
-                            errorEncontrado = true;
-                            break;
-                        }
-                    }
-                }
-
-                if (!errorEncontrado) { nuevoProveedor[0] = codigo; break; }
-            }
+                return null;
+            }).ToUpper();
             filaActual = filaInputCodigo + 2;
 
-            // 2. EMPRESA PROVEEDORA
             int filaInputEmpresa = filaActual;
-            while (true)
-            {
-                Console.SetCursorPosition(2, filaInputEmpresa);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputEmpresa);
-                Console.Write("Ingrese Empresa Proveedora: ");
-                string empresa = Console.ReadLine().Trim();
-                if (string.IsNullOrWhiteSpace(empresa))
-                {
-                    MostrarErrorYContinuar("El nombre de la empresa no puede estar vacío.", filaInputEmpresa + 1);
-                }
-                else { nuevoProveedor[1] = empresa; break; }
-            }
+            nuevoProveedor[1] = ObtenerEntradaValidada("Ingrese Empresa Proveedora: ", filaInputEmpresa);
             filaActual = filaInputEmpresa + 2;
 
-            // 3. NÚMERO DE RUC
             int filaInputRuc = filaActual;
-            while (true)
+            nuevoProveedor[2] = ObtenerEntradaValidada("Ingrese Número de RUC (Solo números): ", filaInputRuc, (ruc) =>
             {
-                Console.SetCursorPosition(2, filaInputRuc);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputRuc);
-                Console.Write("Ingrese Número de RUC (Solo números): ");
-                string ruc = Console.ReadLine().Trim();
-
-                if (string.IsNullOrWhiteSpace(ruc))
-                {
-                    MostrarErrorYContinuar("El RUC no puede estar vacío.", filaInputRuc + 1);
-                }
-                else if (!ruc.All(char.IsDigit))
-                {
-                    MostrarErrorYContinuar("El RUC debe contener solo números.", filaInputRuc + 1);
-                }
-                else { nuevoProveedor[2] = ruc; break; }
-            }
+                if (!ruc.All(char.IsDigit)) { return "El RUC debe contener solo números."; }
+                return null;
+            });
             filaActual = filaInputRuc + 2;
 
-            // 4. REPRESENTANTE
             int filaInputRepresentante = filaActual;
-            while (true)
-            {
-                Console.SetCursorPosition(2, filaInputRepresentante);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputRepresentante);
-                Console.Write("Ingrese Nombre del Representante: ");
-                string representante = Console.ReadLine().Trim();
-                if (string.IsNullOrWhiteSpace(representante))
-                {
-                    MostrarErrorYContinuar("El nombre del representante no puede estar vacío.", filaInputRepresentante + 1);
-                }
-                else { nuevoProveedor[3] = representante; break; }
-            }
+            nuevoProveedor[3] = ObtenerEntradaValidada("Ingrese Nombre del Representante: ", filaInputRepresentante);
             filaActual = filaInputRepresentante + 2;
 
-            // 5. TELÉFONO
             int filaInputTelefono = filaActual;
-            while (true)
+            nuevoProveedor[4] = ObtenerEntradaValidada("Ingrese Teléfono (9 dígitos): ", filaInputTelefono, (tel) =>
             {
-                Console.SetCursorPosition(2, filaInputTelefono);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputTelefono);
-                Console.Write("Ingrese Teléfono (9 dígitos): ");
-                string telefono = Console.ReadLine().Trim();
-
-                if (string.IsNullOrWhiteSpace(telefono))
-                {
-                    MostrarErrorYContinuar("El teléfono no puede estar vacío.", filaInputTelefono + 1);
-                }
-                else if (!telefono.All(char.IsDigit))
-                {
-                    MostrarErrorYContinuar("El teléfono debe contener solo números.", filaInputTelefono + 1);
-                }
-                else if (telefono.Length != 9)
-                {
-                    MostrarErrorYContinuar("El teléfono debe tener exactamente 9 dígitos.", filaInputTelefono + 1);
-                }
-                else { nuevoProveedor[4] = telefono; break; }
-            }
+                if (!tel.All(char.IsDigit) || tel.Length != 9) { return "El teléfono debe contener 9 dígitos numéricos exactos."; }
+                return null;
+            });
             filaActual = filaInputTelefono + 2;
 
-            // 6. DIRECCIÓN
             int filaInputDireccion = filaActual;
-            while (true)
-            {
-                Console.SetCursorPosition(2, filaInputDireccion);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputDireccion);
-                Console.Write("Ingrese Dirección: ");
-                string direccion = Console.ReadLine().Trim();
-                if (string.IsNullOrWhiteSpace(direccion))
-                {
-                    MostrarErrorYContinuar("La dirección no puede estar vacía.", filaInputDireccion + 1);
-                }
-                else { nuevoProveedor[5] = direccion; break; }
-            }
+            nuevoProveedor[5] = ObtenerEntradaValidada("Ingrese Dirección: ", filaInputDireccion);
             filaActual = filaInputDireccion + 2;
 
-            // 7. CIUDAD
             int filaInputCiudad = filaActual;
-            while (true)
-            {
-                Console.SetCursorPosition(2, filaInputCiudad);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, filaInputCiudad);
-                Console.Write("Ingrese Ciudad: ");
-                string ciudad = Console.ReadLine().Trim();
-                if (string.IsNullOrWhiteSpace(ciudad))
-                {
-                    MostrarErrorYContinuar("La ciudad no puede estar vacía.", filaInputCiudad + 1);
-                }
-                else { nuevoProveedor[6] = ciudad; break; }
-            }
+            nuevoProveedor[6] = ObtenerEntradaValidada("Ingrese Ciudad: ", filaInputCiudad);
             filaActual = filaInputCiudad + 2;
 
             Proveedores = AgregarFila(Proveedores, nuevoProveedor);

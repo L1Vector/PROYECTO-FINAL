@@ -33,7 +33,6 @@ C:\Users\UPN\Downloads\Proyecto 1.0\PROYECTO-FINAL\obj\Debug\SYS_VENTAS.exe.conf
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\SYS_VENTAS.exe.config
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\SYS_VENTAS.exe
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\SYS_VENTAS.pdb
-C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\Biblio_SysVentas.dll
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\Biblio_SysVentas.pdb
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\obj\Debug\SYS_VENTAS.csproj.AssemblyReference.cache
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\obj\Debug\SYS_VENTAS.exe.config
@@ -41,3 +40,4 @@ C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\obj\Debug\SYS_VENTAS.c
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\obj\Debug\SYS_VENTAS.csproj.Up2Date
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\obj\Debug\SYS_VENTAS.exe
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\obj\Debug\SYS_VENTAS.pdb
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\Biblio_SysVentas.dll

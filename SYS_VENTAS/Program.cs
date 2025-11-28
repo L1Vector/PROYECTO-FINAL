@@ -27,23 +27,22 @@ namespace SYS_VENTAS
                 {
                     case 0:
                         string[] arregloRegistra = { "PRODUCTOS", "CLIENTES", "VENDEDORES", "PROVEEDORES" };
-                        ClaseSubMenu.subMenu(opcion, arregloRegistra);
+                        ClaseSubMenu.SubMenuDinamico(opcion, arregloRegistra);
                         break;
                     case 1:
                         string[] arregloVentas = { "BOLETA", "FACTURA", "GUIA REM", "PROFORMA" };
-                        ClaseSubMenu.subMenu(opcion, arregloVentas);
+                        ClaseSubMenu.SubMenuDinamico(opcion, arregloVentas);
                         break;
                     case 2:
                         string[] arregloReporte = { "PRODUCTOS", "CLIENTES", "VENDEDORES", "PROVEEDORES", "BOLETAS", "FACTURAS", "GUIAS", "PROFORMAS" };
-                        ClaseSubMenu.subMenu(opcion, arregloReporte);
+                        ClaseSubMenu.SubMenuDinamico(opcion, arregloReporte);
                         break;
                     case 3:
                         string[] arregloModifica = { "PRODUCTOS", "CLIENTES", "VENDEDORES", "PROVEEDORES" };
-                        ClaseSubMenu.subMenu(opcion, arregloModifica);
+                        ClaseSubMenu.SubMenuDinamico(opcion, arregloModifica);
                         break;
                 }
 
-                Console.ReadKey();
                 Console.Clear();
 
             } while (opcion != 5);

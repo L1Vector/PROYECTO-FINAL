@@ -67,11 +67,7 @@ namespace Biblio_SysVentas
                         indice = menuPrincipal.Length - 1;
                     }
                 }
-
-
             } while (tecla != ConsoleKey.Enter);
-
-
             return indice;
         }
 

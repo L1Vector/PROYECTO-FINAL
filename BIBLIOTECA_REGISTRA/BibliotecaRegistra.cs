@@ -96,7 +96,7 @@ namespace BIBLIOTECA_REGISTRA
 
         public static void RegistrarProducto()
         {
-            const int FILA_INICIO_FORMULARIO = 5;
+            int FILA_INICIO_FORMULARIO = 5;
             string[] nuevoProducto = new string[5];
             string titulo = "R E G I S T R A R   P R O D U C T O S";
 
@@ -164,7 +164,7 @@ namespace BIBLIOTECA_REGISTRA
 
         public static void RegistrarCliente()
         {
-            const int FILA_INICIO_FORMULARIO = 5;
+            int FILA_INICIO_FORMULARIO = 5;
             string[] nuevoCliente = new string[6];
             string titulo = "R E G I S T R A R   C L I E N T E S";
 
@@ -224,7 +224,7 @@ namespace BIBLIOTECA_REGISTRA
 
         public static void RegistrarVendedor()
         {
-            const int FILA_INICIO_FORMULARIO = 5;
+            int FILA_INICIO_FORMULARIO = 5;
             string[] nuevoVendedor = new string[5];
             string titulo = "R E G I S T R A R   V E N D E D O R E S";
 
@@ -284,7 +284,7 @@ namespace BIBLIOTECA_REGISTRA
 
         public static void RegistrarProveedor()
         {
-            const int FILA_INICIO_FORMULARIO = 5;
+            int FILA_INICIO_FORMULARIO = 5;
             string[] nuevoProveedor = new string[7];
             string titulo = "R E G I S T R A R   P R O V E E D O R E S";
 

@@ -4,18 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D050ED1-FD4A-4C75-982D-1AEC951E9A39}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>SYS_VENTAS</RootNamespace>
-    <AssemblyName>SYS_VENTAS</AssemblyName>
+    <ProjectGuid>{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SUBMENU_VENTAS</RootNamespace>
+    <AssemblyName>SUBMENU_VENTAS</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,16 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BIBLIOTECA_REGISTRA">
-      <HintPath>..\..\Registro\Proyecto-Final\BIBLIOTECA_REGISTRA\bin\Debug\BIBLIOTECA_REGISTRA.dll</HintPath>
-    </Reference>
-    <Reference Include="Biblio_SysVentas, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Biblio_SysVentas\bin\Debug\Biblio_SysVentas.dll</HintPath>
-    </Reference>
-    <Reference Include="SUBMENU_VENTAS">
-      <HintPath>..\..\Ventas\Proyecto-Final\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,12 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClaseArreglos.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Boleta.cs" />
+    <Compile Include="Interfaz_submenu_ventas.cs" />
+    <Compile Include="LogicaVentas.cs" />
+    <Compile Include="Factura.cs" />
+    <Compile Include="GuiaRemision.cs" />
+    <Compile Include="Numerador.cs" />
+    <Compile Include="Proforma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="Utilidades.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

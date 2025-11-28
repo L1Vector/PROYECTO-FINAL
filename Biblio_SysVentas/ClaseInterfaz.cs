@@ -10,7 +10,7 @@ namespace Biblio_SysVentas
             Console.BackgroundColor = ConsoleColor.Yellow;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("                                                                                          ");
-            Console.WriteLine("                                   SITEMA DE VENTAS                                       ");
+            Console.WriteLine("                            SITEMA PARA GESTIONAR VENTAS                                  ");
             Console.WriteLine("                                                                                          ");
             Console.ResetColor();
 

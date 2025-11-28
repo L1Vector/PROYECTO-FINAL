@@ -1,0 +1,12 @@
+D:\Escritorio\SUBMENU_VENTAS_TRABAJOFINAL\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.csproj.AssemblyReference.cache
+D:\Escritorio\SUBMENU_VENTAS_TRABAJOFINAL\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.csproj.CoreCompileInputs.cache
+D:\Escritorio\SUBMENU_VENTAS_TRABAJOFINAL\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll
+D:\Escritorio\SUBMENU_VENTAS_TRABAJOFINAL\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.pdb
+D:\Escritorio\SUBMENU_VENTAS_TRABAJOFINAL\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.dll
+D:\Escritorio\SUBMENU_VENTAS_TRABAJOFINAL\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.pdb
+C:\Users\lvasq\Downloads\Ventas\Proyecto-Final\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll
+C:\Users\lvasq\Downloads\Ventas\Proyecto-Final\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.pdb
+C:\Users\lvasq\Downloads\Ventas\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.csproj.AssemblyReference.cache
+C:\Users\lvasq\Downloads\Ventas\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.csproj.CoreCompileInputs.cache
+C:\Users\lvasq\Downloads\Ventas\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.dll
+C:\Users\lvasq\Downloads\Ventas\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.pdb

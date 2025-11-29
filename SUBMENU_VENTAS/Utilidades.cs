@@ -96,7 +96,7 @@ namespace SUBMENU_VENTAS
         {
             while (true)
             {
-                string ruc = LeerCaja(x, y, 11);
+                string ruc = LeerCaja(x, y, 30);
 
                 if (ruc.Length == 11 && long.TryParse(ruc, out _))
                     return ruc;

@@ -45,13 +45,6 @@
                             Factura.Mostrar();
                             break;
 
-                        case "GUIA REM":
-                            GuiaRemision.Mostrar();
-                            break;
-
-                        case "PROFORMA":
-                            Proforma.Mostrar();
-                            break;
                     }
 
                     Console.Clear();

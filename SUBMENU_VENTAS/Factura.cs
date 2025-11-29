@@ -1,4 +1,5 @@
 ﻿using System;
+using BIBLIOTECA_REGISTRA;
 
 namespace SUBMENU_VENTAS
 {
@@ -7,64 +8,124 @@ namespace SUBMENU_VENTAS
         public static void Mostrar()
         {
             Utilities.LimpiarZonaTrabajo();
-            Console.SetCursorPosition(30, 1);
+            Console.SetCursorPosition(38, 6);
             Console.Write("FACTURA");
 
-
+            // =====================================================
             // DATOS PRINCIPALES
-
-            Console.SetCursorPosition(8, 6);
+            // =====================================================
+            Console.SetCursorPosition(10, 8);
             Console.Write("RUC:");
-            string ruc = Utilities.LeerRUC(15, 6);
+            string ruc = Utilities.LeerRUC(20, 8);
 
-            Console.SetCursorPosition(8, 8);
+            // Buscar empresa por RUC
+            string empresa = Utilities.BuscarEmpresaPorRUC(ruc);
+
+            if (string.IsNullOrEmpty(empresa))
+            {
+                Console.SetCursorPosition(20, 10);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("RUC NO REGISTRADO. Registre la empresa primero.");
+                Console.ResetColor();
+                Console.ReadKey();
+
+                Utilities.LimpiarZonaTrabajo();
+                return;
+            }
+
+            // Mostrar empresa
+            Console.SetCursorPosition(10, 10);
             Console.Write("EMPRESA:");
-            string empresa = Utilities.LeerCaja(18, 8, 40);
+            Utilities.DibujarCajaLectura(20, 10, empresa, 30);
 
-            // Número mostrado sin consumir
+            // Nº de factura no consumido aún
             string nroFactura = Numerador.VerFacturaActual();
-            Console.SetCursorPosition(62, 6);
+            Console.SetCursorPosition(60, 8);
             Console.Write("NRO FACTURA:");
-            Console.SetCursorPosition(76, 6);
-            Console.Write(nroFactura);
+            Utilities.DibujarCajaLectura(73, 8, nroFactura, 10);
 
+            // =====================================================
+            // PRODUCTO AUTOCOMPLETADO
+            // =====================================================
+            Console.SetCursorPosition(10, 13); Console.Write("CODIGO");
+            Console.SetCursorPosition(23, 13); Console.Write("PRODUCTO");
+            Console.SetCursorPosition(38, 13); Console.Write("CANTIDAD");
+            Console.SetCursorPosition(55, 13); Console.Write("PRECIO UNI");
+            Console.SetCursorPosition(74, 13); Console.Write("MONTO");
 
-            // TABLA PRODUCTO
+            string codigoProd;
+            string producto;
+            double precioUni;
+            int stock;
 
-            Console.SetCursorPosition(8, 11); Console.Write("CODIGO");
-            Console.SetCursorPosition(24, 11); Console.Write("PRODUCTO");
-            Console.SetCursorPosition(50, 11); Console.Write("CANTIDAD");
-            Console.SetCursorPosition(62, 11); Console.Write("PRECIO UNI");
-            Console.SetCursorPosition(76, 11); Console.Write("MONTO");
+            // ====== INGRESAR CÓDIGO Y VALIDAR ======
+            while (true)
+            {
+                Console.SetCursorPosition(10, 15);
+                Console.Write(new string(' ', 10));
+                codigoProd = Utilities.LeerCaja(10, 15, 8).ToUpper();
 
-            string codigo = Utilities.GenerarCodigoProducto();
-            Console.SetCursorPosition(8, 13); Console.Write(codigo);
+                producto = Utilities.BuscarProductoPorCodigo(codigoProd);
+                precioUni = Utilities.BuscarPrecioPorCodigo(codigoProd);
+                stock = Utilities.BuscarStockPorCodigo(codigoProd);
 
-            Console.SetCursorPosition(24, 13);
-            string producto = Utilities.LeerCaja(24, 13, 24);
+                if (producto != "" && stock >= 0)
+                    break;
 
-            double cantidad = Utilities.LeerNumero(50, 13, 8);
-            double precioUni = Utilities.LeerNumero(62, 13, 10);
+                Console.SetCursorPosition(10, 16);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("Código NO existe");
+                Console.ResetColor();
+                System.Threading.Thread.Sleep(700);
 
+                Console.SetCursorPosition(10, 16);
+                Console.Write(new string(' ', 40));
+            }
+
+            // MOSTRAR PRODUCTO Y PRECIO AUTOMÁTICO
+            Utilities.DibujarCajaLectura(23, 15, producto, 10);
+            Utilities.DibujarCajaLectura(55, 15, precioUni.ToString("F2"), 10);
+
+            // ====== VALIDAR CANTIDAD ======
+            double cantidad;
+
+            while (true)
+            {
+                Console.SetCursorPosition(38, 15);
+                Console.Write(new string(' ', 8));
+                cantidad = Utilities.LeerNumero(38, 15, 8);
+
+                if (cantidad <= stock)
+                    break;
+
+                Console.SetCursorPosition(38, 16);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"Stock insuficiente (MAX {stock})");
+                Console.ResetColor();
+                System.Threading.Thread.Sleep(700);
+
+                Console.SetCursorPosition(38, 16);
+                Console.Write(new string(' ', 40));
+            }
+
+            // MONTO AUTOMÁTICO
             double monto = Math.Round(cantidad * precioUni, 2);
-            Console.SetCursorPosition(76, 13);
-            Console.Write(monto.ToString("F2"));
+            Utilities.DibujarCajaLectura(74, 15, monto.ToString("F2"), 10);
 
-
-            // VENDEDOR Y TOTAL
-
-            Console.SetCursorPosition(8, 17);
+            // =====================================================
+            // VENDEDOR + TOTAL
+            // =====================================================
+            Console.SetCursorPosition(10, 19);
             Console.Write("DNI VENDEDOR:");
-            string dniVendedor = Utilities.LeerDNI(22, 17);
+            string dniVend = Utilities.LeerDNI(25, 19);
 
-            Console.SetCursorPosition(62, 17);
+            Console.SetCursorPosition(62, 19);
             Console.Write("TOTAL:");
-            Console.SetCursorPosition(69, 17);
-            Console.Write(monto.ToString("F2"));
+            Utilities.DibujarCajaLectura(69, 19, monto.ToString("F2"), 10);
 
-
-            // BOTONES FINALES
-
+            // =====================================================
+            // GUARDAR O CANCELAR
+            // =====================================================
             bool guardar = Utilities.MenuGuardarCancelar();
 
             if (guardar)
@@ -75,12 +136,12 @@ namespace SUBMENU_VENTAS
                     ruc,
                     empresa,
                     nroFactura,
-                    codigo,
+                    codigoProd,
                     producto,
                     cantidad.ToString(),
                     precioUni.ToString(),
                     monto,
-                    dniVendedor
+                    dniVend
                 );
 
                 Console.SetCursorPosition(30, 25);
@@ -93,33 +154,6 @@ namespace SUBMENU_VENTAS
                 Console.Write("OPERACION CANCELADA.");
                 Console.ReadKey();
             }
-        }
-
-        // ===== MARCO =====
-
-    
-
-
-            public static void DibujarMarco()
-        {
-            Console.BackgroundColor = ConsoleColor.Black;
-
-            for (int i = 4; i <= 26; i++)
-            {
-                Console.SetCursorPosition(6, i); Console.Write(" ");
-                Console.SetCursorPosition(86, i); Console.Write(" ");
-            }
-
-            for (int i = 6; i <= 86; i++)
-            {
-                Console.SetCursorPosition(i, 4); Console.Write(" ");
-                Console.SetCursorPosition(i, 26); Console.Write(" ");
-            }
-
-            Console.SetCursorPosition(34, 5);
-            Console.Write("BOLETA DE VENTA");
-
-            Console.ResetColor();
         }
     }
 }

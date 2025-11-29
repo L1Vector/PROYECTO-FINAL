@@ -13,6 +13,7 @@ using System;
 using Biblio_SysVentas; //Referencia a la biblioteca de Interfaz
 using BIBLIOTECA_REGISTRA; //Referencia a la biblioteca de Registro
 using SUBMENU_VENTAS; //Referencia a la biblioteca de Ventas
+using Biblioteca_Reportes; //Referencia a la biblioteca de Reportes
 
 namespace SYS_VENTAS
 {
@@ -56,33 +57,14 @@ namespace SYS_VENTAS
                             case 1:
                                 Factura.Mostrar();
                                 break;
-                            case 2:
-                                GuiaRemision.Mostrar();
+                            default:                                
                                 break;
-                            case 3:
-                                Proforma.Mostrar();
-                                break;
-
                         }
                         break;
                     case 2://REPORTES
                         valor = ClaseSubMenu.SubMenuDinamico(opcion, ClaseArreglos.arregloReporte);
-                        switch (valor)
-                        {
-                            case 0:
-                                break;
-                            case 1:
-                                break;
-                            case 2:
-                                break;
-                            case 3:
-                                break;
-                            case 4:
-                                break;
-                            case 5:
-                                break;
-                             
-                        }
+                        if (valor != -1)
+                                Reportes_Clase.MostrarReporte(ClaseArreglos.arregloReporte[valor]);
                         break;
                     case 3://MODIFICA
                         valor = ClaseSubMenu.SubMenuDinamico(opcion, ClaseArreglos.arregloModifica);

@@ -41,7 +41,9 @@ C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\obj\Debug\SYS_VENTAS.c
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\obj\Debug\SYS_VENTAS.exe
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\obj\Debug\SYS_VENTAS.pdb
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\Biblio_SysVentas.dll
-C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\BIBLIOTECA_REGISTRA.dll
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\BIBLIOTECA_REGISTRA.pdb
-C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\SUBMENU_VENTAS.dll
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\SUBMENU_VENTAS.pdb
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\Biblioteca_Reportes.dll
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\Biblioteca_Reportes.pdb
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\SUBMENU_VENTAS.dll
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SYS_VENTAS\bin\Debug\BIBLIOTECA_REGISTRA.dll

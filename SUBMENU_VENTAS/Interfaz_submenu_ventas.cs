@@ -34,7 +34,6 @@
                 {
                     Console.Clear();
 
-                    // 🔥 AQUI LLAMAMOS A CADA INTERFAZ 🔥
                     switch (submenuVentas[opcion])
                     {
                         case "BOLETA":
@@ -45,13 +44,6 @@
                             Factura.Mostrar();
                             break;
 
-                        case "GUIA REM":
-                            GuiaRemision.Mostrar();
-                            break;
-
-                        case "PROFORMA":
-                            Proforma.Mostrar();
-                            break;
                     }
 
                     Console.Clear();

@@ -50,14 +50,18 @@ namespace BIBLIOTECA_REGISTRA
 
         private static void MostrarErrorYContinuar(string mensaje, int filaError)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
+
             Console.SetCursorPosition(2, filaError);
             Console.Write($" Error: {mensaje} ");
-            Console.ResetColor();
 
             Console.SetCursorPosition(2, filaError + 1);
             Console.WriteLine("Presione cualquier tecla para reintentar...");
-            Console.ReadKey(true);
 
+            Console.ReadKey(true);
+            Console.ResetColor();
+
+            // Limpiar las líneas de error
             Console.SetCursorPosition(2, filaError);
             Console.Write(new string(' ', 86));
             Console.SetCursorPosition(2, filaError + 1);

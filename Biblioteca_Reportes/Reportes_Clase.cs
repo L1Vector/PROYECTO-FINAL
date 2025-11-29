@@ -16,9 +16,9 @@ namespace Biblioteca_Reportes
 
             // Título
             Console.SetCursorPosition(InicioX, InicioY);
-            Console.WriteLine($"--- REPORTE DE {tipoReporte.ToUpper()} ---");
+            Console.WriteLine($"-------------------------------- REPORTE DE {tipoReporte.ToUpper()} -----------------------------------");
             Console.SetCursorPosition(InicioX, InicioY + 1);
-            Console.WriteLine(new string('-', 50));
+            Console.WriteLine(new string('-', 88));
 
             switch (tipoReporte.ToUpper())
             {
@@ -276,7 +276,7 @@ namespace Biblioteca_Reportes
 
         private static void LimpiarAreaReporte()
         {
-            for (int i = InicioY; i < 26; i++)
+            for (int i = 5; i < 26; i++)
             {
                 Console.SetCursorPosition(1, i);
                 Console.Write(new string(' ', 87));
@@ -289,6 +289,7 @@ namespace Biblioteca_Reportes
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("No hay datos registrados.");
             Console.ResetColor();
+            Console.ReadKey();
         }
 
         private static void EscribirFila(int fila, int xInicial, params object[] columnas)

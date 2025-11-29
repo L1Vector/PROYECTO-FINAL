@@ -98,7 +98,7 @@ namespace BIBLIOTECA_REGISTRA
         {
             int FILA_INICIO_FORMULARIO = 5;
             string[] nuevoProducto = new string[5];
-            string titulo = "R E G I S T R A R   P R O D U C T O S";
+            string titulo = "R E G I S T R A R  P R O D U C T O S";
 
             LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
             int filaActual = FILA_INICIO_FORMULARIO;
@@ -166,7 +166,7 @@ namespace BIBLIOTECA_REGISTRA
         {
             int FILA_INICIO_FORMULARIO = 5;
             string[] nuevoCliente = new string[6];
-            string titulo = "R E G I S T R A R   C L I E N T E S";
+            string titulo = "R E G I S T R A R  C L I E N T E S";
 
             LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
             int filaActual = FILA_INICIO_FORMULARIO;
@@ -204,7 +204,11 @@ namespace BIBLIOTECA_REGISTRA
             filaActual = filaInputTelefono + 2;
 
             int filaInputEmail = filaActual;
-            nuevoCliente[4] = ObtenerEntradaValidada("Ingrese Email: ", filaInputEmail);
+            nuevoCliente[4] = ObtenerEntradaValidada("Ingrese Email: ", filaInputEmail, (email) =>
+            {
+                if (!email.Contains("@")) { return "La dirección de correo electrónico debe contener un '@'."; }
+                return null;
+            });
             filaActual = filaInputEmail + 2;
 
             int filaInputDireccion = filaActual;
@@ -226,7 +230,7 @@ namespace BIBLIOTECA_REGISTRA
         {
             int FILA_INICIO_FORMULARIO = 5;
             string[] nuevoVendedor = new string[5];
-            string titulo = "R E G I S T R A R   V E N D E D O R E S";
+            string titulo = "R E G I S T R A R  V E N D E D O R E S";
 
             LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
             int filaActual = FILA_INICIO_FORMULARIO;
@@ -264,9 +268,9 @@ namespace BIBLIOTECA_REGISTRA
             filaActual = filaInputSueldo + 2;
 
             int filaInputTelefono = filaActual;
-            nuevoVendedor[4] = ObtenerEntradaValidada("Ingrese Teléfono (Solo números): ", filaInputTelefono, (tel) =>
+            nuevoVendedor[4] = ObtenerEntradaValidada("Ingrese Teléfono (9 dígitos): ", filaInputTelefono, (tel) =>
             {
-                if (!tel.All(char.IsDigit)) { return "El teléfono debe contener solo números."; }
+                if (!tel.All(char.IsDigit) || tel.Length != 9) { return "El teléfono debe contener 9 dígitos numéricos exactos."; }
                 return null;
             });
             filaActual = filaInputTelefono + 2;
@@ -286,7 +290,7 @@ namespace BIBLIOTECA_REGISTRA
         {
             int FILA_INICIO_FORMULARIO = 5;
             string[] nuevoProveedor = new string[7];
-            string titulo = "R E G I S T R A R   P R O V E E D O R E S";
+            string titulo = "R E G I S T R A R  P R O V E E D O R E S";
 
             LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
             int filaActual = FILA_INICIO_FORMULARIO;
@@ -312,9 +316,9 @@ namespace BIBLIOTECA_REGISTRA
             filaActual = filaInputEmpresa + 2;
 
             int filaInputRuc = filaActual;
-            nuevoProveedor[2] = ObtenerEntradaValidada("Ingrese Número de RUC (Solo números): ", filaInputRuc, (ruc) =>
+            nuevoProveedor[2] = ObtenerEntradaValidada("Ingrese Número de RUC (11 dígitos): ", filaInputRuc, (ruc) =>
             {
-                if (!ruc.All(char.IsDigit)) { return "El RUC debe contener solo números."; }
+                if (!ruc.All(char.IsDigit) || ruc.Length != 11) { return "El RUC debe contener exactamente 11 dígitos numéricos."; }
                 return null;
             });
             filaActual = filaInputRuc + 2;

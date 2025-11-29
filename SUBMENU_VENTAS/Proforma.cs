@@ -1,4 +1,5 @@
 ﻿using System;
+using BIBLIOTECA_REGISTRA;
 
 namespace SUBMENU_VENTAS
 {
@@ -6,64 +7,87 @@ namespace SUBMENU_VENTAS
     {
         public static void Mostrar()
         {
-            Console.Clear();
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.Clear();
-            Console.ResetColor();
+            Utilities.LimpiarZonaTrabajo();
+            Console.SetCursorPosition(38, 6);
+            Console.Write("PROFORMA");
 
-            DibujarMarco("PROFORMA");
-
-            // ===============================
-            // DATOS PRINCIPALES
-            // ===============================
-            Console.SetCursorPosition(8, 6);
+            Console.SetCursorPosition(10, 8);
             Console.Write("CLIENTE:");
-            string cliente = Utilities.LeerCaja(18, 6, 40);
+            string cliente = Utilities.LeerCaja(20, 8, 30);
 
-            // Número NO consumido aún
             string nroProforma = Numerador.VerProformaActual();
-            Console.SetCursorPosition(62, 6);
+            Console.SetCursorPosition(60, 8);
             Console.Write("NRO PROFORMA:");
-            Console.SetCursorPosition(76, 6);
-            Console.Write(nroProforma);
+            Utilities.DibujarCajaLectura(75, 8, nroProforma, 10);
 
-            // ===============================
-            // TABLA PRODUCTO
-            // ===============================
-            Console.SetCursorPosition(8, 11); Console.Write("CODIGO");
-            Console.SetCursorPosition(24, 11); Console.Write("PRODUCTO");
-            Console.SetCursorPosition(50, 11); Console.Write("CANTIDAD");
-            Console.SetCursorPosition(62, 11); Console.Write("PRECIO UNI");
-            Console.SetCursorPosition(76, 11); Console.Write("MONTO");
+            // PRODUCTO AUTOCOMPLETADO
+            Console.SetCursorPosition(10, 13); Console.Write("CODIGO");
+            Console.SetCursorPosition(23, 13); Console.Write("PRODUCTO");
+            Console.SetCursorPosition(38, 13); Console.Write("CANTIDAD");
+            Console.SetCursorPosition(55, 13); Console.Write("PRECIO");
+            Console.SetCursorPosition(74, 13); Console.Write("MONTO");
 
-            string codigo = Utilities.GenerarCodigoProducto();
-            Console.SetCursorPosition(8, 13); Console.Write(codigo);
+            string codigoProd;
+            string producto;
+            double precioUni;
+            int stock;
 
-            Console.SetCursorPosition(24, 13);
-            string producto = Utilities.LeerCaja(24, 13, 24);
+            while (true)
+            {
+                Console.SetCursorPosition(10, 15);
+                Console.Write(new string(' ', 10));
+                codigoProd = Utilities.LeerCaja(10, 15, 10).ToUpper();
 
-            double cantidad = Utilities.LeerNumero(50, 13, 8);
-            double precioUni = Utilities.LeerNumero(62, 13, 10);
+                producto = Utilities.BuscarProductoPorCodigo(codigoProd);
+                precioUni = Utilities.BuscarPrecioPorCodigo(codigoProd);
+                stock = Utilities.BuscarStockPorCodigo(codigoProd);
+
+                if (producto != "" && stock >= 0)
+                    break;
+
+                Console.SetCursorPosition(10, 16);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("Código NO existe");
+                Console.ResetColor();
+                System.Threading.Thread.Sleep(700);
+                Console.SetCursorPosition(10, 16);
+                Console.Write(new string(' ', 40));
+            }
+
+            Utilities.DibujarCajaLectura(23, 15, producto, 20);
+            Utilities.DibujarCajaLectura(55, 15, precioUni.ToString("F2"), 10);
+
+            double cantidad;
+            while (true)
+            {
+                Console.SetCursorPosition(38, 15);
+                Console.Write(new string(' ', 8));
+                cantidad = Utilities.LeerNumero(38, 15, 8);
+
+                if (cantidad <= stock)
+                    break;
+
+                Console.SetCursorPosition(38, 16);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"MAX {stock}");
+                Console.ResetColor();
+                System.Threading.Thread.Sleep(700);
+                Console.SetCursorPosition(38, 16);
+                Console.Write(new string(' ', 40));
+            }
 
             double monto = Math.Round(cantidad * precioUni, 2);
-            Console.SetCursorPosition(76, 13);
-            Console.Write(monto.ToString("F2"));
+            Utilities.DibujarCajaLectura(74, 15, monto.ToString("F2"), 10);
 
-            // ===============================
-            // VENDEDOR Y TOTAL
-            // ===============================
-            Console.SetCursorPosition(8, 17);
+            // vendedor
+            Console.SetCursorPosition(10, 19);
             Console.Write("DNI VENDEDOR:");
-            string dniVendedor = Utilities.LeerDNI(22, 17);
+            string dniVend = Utilities.LeerDNI(25, 19);
 
-            Console.SetCursorPosition(62, 17);
+            Console.SetCursorPosition(62, 19);
             Console.Write("TOTAL:");
-            Console.SetCursorPosition(69, 17);
-            Console.Write(monto.ToString("F2"));
+            Utilities.DibujarCajaLectura(69, 19, monto.ToString("F2"), 10);
 
-            // ===============================
-            // BOTONES FINALES
-            // ===============================
             bool guardar = Utilities.MenuGuardarCancelar();
 
             if (guardar)
@@ -73,12 +97,12 @@ namespace SUBMENU_VENTAS
                 LogicaVentas.GuardarProforma(
                     cliente,
                     nroProforma,
-                    codigo,
+                    codigoProd,
                     producto,
                     cantidad.ToString(),
                     precioUni.ToString(),
                     monto,
-                    dniVendedor
+                    dniVend
                 );
 
                 Console.SetCursorPosition(30, 25);
@@ -91,24 +115,6 @@ namespace SUBMENU_VENTAS
                 Console.Write("OPERACION CANCELADA.");
                 Console.ReadKey();
             }
-        }
-
-        // ===== MARCO =====
-        static void DibujarMarco(string titulo)
-        {
-            for (int i = 4; i <= 26; i++)
-            {
-                Console.SetCursorPosition(6, i); Console.Write(" ");
-                Console.SetCursorPosition(86, i); Console.Write(" ");
-            }
-            for (int i = 6; i <= 86; i++)
-            {
-                Console.SetCursorPosition(i, 4); Console.Write(" ");
-                Console.SetCursorPosition(i, 26); Console.Write(" ");
-            }
-
-            Console.SetCursorPosition(36, 5);
-            Console.Write(titulo);
         }
     }
 }

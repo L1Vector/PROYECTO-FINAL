@@ -1,106 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BIBLIOTECA_REGISTRA
 {
     public static class BibliotecaRegistra
     {
-
-        public static string[,] Productos = new string[0, 5];    // [Código, Nombre, Categoría, Stock, PrecioUnitario]
-        public static string[,] Clientes = new string[0, 6];     // [DNI, Nombres, Apellidos, Teléfono, Email, Dirección]
-        public static string[,] Vendedores = new string[0, 5];   // [CódigoVendedor, Nombres, Apellidos, Sueldo, Teléfono]
-        public static string[,] Proveedores = new string[0, 7]; // [CódigoProveedor, Empresa, RUC, Representante, Teléfono, Dirección, Ciudad]
-
         // Esta función incrementa el tamaño del arreglo bidimensional en una fila y añade los nuevos datos al final.
-        public static string[,] AgregarFila(string[,] original, string[] nuevaFila)
-        {
-            int numFilas = original.GetLength(0);
-            int numCols = original.GetLength(1);
-            string[,] nuevoArray = new string[numFilas + 1, numCols];
-
-            for (int i = 0; i < numFilas; i++)
-            {
-                for (int j = 0; j < numCols; j++)
-                {
-                    nuevoArray[i, j] = original[i, j];
-                }
-            }
-
-            for (int j = 0; j < numCols; j++)
-            {
-                nuevoArray[numFilas, j] = nuevaFila[j];
-            }
-
-            return nuevoArray;
-        }
-
-        private static void LimpiarAreaRegistro(int filaInicial)
-        {
-            int anchoArea = 88;
-            for (int i = filaInicial; i <= 25; i++)
-            {
-                Console.SetCursorPosition(1, i);
-                Console.Write(new string(' ', anchoArea));
-            }
-            Console.SetCursorPosition(2, filaInicial);
-        }
-
-        private static void MostrarErrorYContinuar(string mensaje, int filaError)
-        {
-            Console.SetCursorPosition(2, filaError);
-            Console.Write($" Error: {mensaje} ");
-            Console.ResetColor();
-
-            Console.SetCursorPosition(2, filaError + 1);
-            Console.WriteLine("Presione cualquier tecla para reintentar...");
-            Console.ReadKey(true);
-
-            Console.SetCursorPosition(2, filaError);
-            Console.Write(new string(' ', 86));
-            Console.SetCursorPosition(2, filaError + 1);
-            Console.Write(new string(' ', 86));
-        }
-
-        private static string ObtenerEntradaValidada(string mensaje, int fila, Func<string, string> validadorAdicional = null)
-        {
-            while (true)
-            {
-                Console.SetCursorPosition(2, fila);
-                Console.Write(new string(' ', 86));
-                Console.SetCursorPosition(2, fila);
-                Console.Write(mensaje);
-                string input = Console.ReadLine().Trim();
-
-                if (string.IsNullOrWhiteSpace(input))
-                {
-                    MostrarErrorYContinuar("Este campo no puede estar vacío.", fila + 1);
-                    continue;
-                }
-
-                if (validadorAdicional != null)
-                {
-                    string error = validadorAdicional(input);
-                    if (!string.IsNullOrEmpty(error))
-                    {
-                        MostrarErrorYContinuar(error, fila + 1);
-                        continue;
-                    }
-                }
-
-                return input;
-            }
-        }
-
         public static void RegistrarProducto()
         {
             const int FILA_INICIO_FORMULARIO = 5;
             string[] nuevoProducto = new string[5];
             string titulo = "R E G I S T R A R   P R O D U C T O S";
 
-            LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
+            Optimización.LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
             int filaActual = FILA_INICIO_FORMULARIO;
 
             Console.SetCursorPosition(2 + (86 - titulo.Length) / 2, filaActual++);
@@ -108,19 +20,19 @@ namespace BIBLIOTECA_REGISTRA
             filaActual++;
 
             int filaInputCodigo = filaActual;
-            nuevoProducto[0] = ObtenerEntradaValidada("Ingrese Código del Producto (Único): ", filaInputCodigo, (codigo) =>
+            nuevoProducto[0] = Optimización.ObtenerEntradaValidada("Ingrese Código del Producto (Único): ", filaInputCodigo, (codigo) =>
             {
                 string codigoUpper = codigo.ToUpper();
-                for (int i = 0; i < Productos.GetLength(0); i++)
+                for (int i = 0; i < Arreglos.Productos.GetLength(0); i++)
                 {
-                    if (Productos[i, 0].Equals(codigoUpper)) { return "El código de producto ya existe y debe ser único."; }
+                    if (Arreglos.Productos[i, 0].Equals(codigoUpper)) { return "El código de producto ya existe y debe ser único."; }
                 }
                 return null;
             }).ToUpper();
             filaActual = filaInputCodigo + 2;
 
             int filaInputNombre = filaActual;
-            nuevoProducto[1] = ObtenerEntradaValidada("Ingrese Nombre del Producto (Único): ", filaInputNombre, (nombre) =>
+            nuevoProducto[1] = Optimización.ObtenerEntradaValidada("Ingrese Nombre del Producto (Único): ", filaInputNombre, (nombre) =>
             {
                 string nombreUpper = nombre.ToUpper();
                 for (int i = 0; i < Productos.GetLength(0); i++)
@@ -132,11 +44,11 @@ namespace BIBLIOTECA_REGISTRA
             filaActual = filaInputNombre + 2;
 
             int filaInputCategoria = filaActual;
-            nuevoProducto[2] = ObtenerEntradaValidada("Ingrese Categoría: ", filaInputCategoria);
+            nuevoProducto[2] = Optimización.ObtenerEntradaValidada("Ingrese Categoría: ", filaInputCategoria);
             filaActual = filaInputCategoria + 2;
 
             int filaInputStock = filaActual;
-            nuevoProducto[3] = ObtenerEntradaValidada("Ingrese Stock: ", filaInputStock, (input) =>
+            nuevoProducto[3] = Optimización.ObtenerEntradaValidada("Ingrese Stock: ", filaInputStock, (input) =>
             {
                 if (int.TryParse(input, out int stock) && stock >= 0) { return null; }
                 return "El stock debe ser un número entero positivo o cero.";
@@ -144,22 +56,22 @@ namespace BIBLIOTECA_REGISTRA
             filaActual = filaInputStock + 2;
 
             int filaInputPrecio = filaActual;
-            nuevoProducto[4] = ObtenerEntradaValidada("Ingrese Precio Unitario: ", filaInputPrecio, (input) =>
+            nuevoProducto[4] = Optimización.ObtenerEntradaValidada("Ingrese Precio Unitario: ", filaInputPrecio, (input) =>
             {
                 if (decimal.TryParse(input, out decimal precio) && precio > 0) { return null; }
                 return "El precio debe ser un número decimal positivo.";
             });
             filaActual = filaInputPrecio + 2;
 
-            Productos = AgregarFila(Productos, nuevoProducto);
+            Arreglos.Productos = Optimización.AgregarFila(Arreglos.Productos, nuevoProducto);
 
-            LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
+            Optimización.LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
             Console.SetCursorPosition(3, FILA_INICIO_FORMULARIO);
             Console.WriteLine("Producto registrado con éxito.");
             Console.SetCursorPosition(2, FILA_INICIO_FORMULARIO + 2);
             Console.WriteLine("Presione una tecla para volver al menú.");
             Console.ReadKey();
-            LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
+            Optimización.LimpiarAreaRegistro(FILA_INICIO_FORMULARIO);
         }
 
         public static void RegistrarCliente()

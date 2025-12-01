@@ -34,8 +34,9 @@
     <Reference Include="BIBLIOTECA_REGISTRA">
       <HintPath>..\..\1EF_Registro\BIBLIOTECA_REGISTRA\bin\Debug\BIBLIOTECA_REGISTRA.dll</HintPath>
     </Reference>
-    <Reference Include="SUBMENU_VENTAS">
-      <HintPath>..\..\Biblioteca_Ventas\Proyecto-Final\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll</HintPath>
+    <Reference Include="SUBMENU_VENTAS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

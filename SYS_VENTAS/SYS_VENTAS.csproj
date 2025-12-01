@@ -36,10 +36,11 @@
   <ItemGroup>
     <Reference Include="BIBLIOTECA_REGISTRA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Registro\BIBLIOTECA_REGISTRA\bin\Debug\BIBLIOTECA_REGISTRA.dll</HintPath>
+      <HintPath>..\BIBLIOTECA_REGISTRA\bin\Debug\BIBLIOTECA_REGISTRA.dll</HintPath>
     </Reference>
-    <Reference Include="Biblioteca_Reportes">
-      <HintPath>..\..\Report2\Proyecto-Final\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.dll</HintPath>
+    <Reference Include="Biblioteca_Reportes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.dll</HintPath>
     </Reference>
     <Reference Include="Biblio_SysVentas, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -47,7 +48,7 @@
     </Reference>
     <Reference Include="SUBMENU_VENTAS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Venta\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll</HintPath>
+      <HintPath>..\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

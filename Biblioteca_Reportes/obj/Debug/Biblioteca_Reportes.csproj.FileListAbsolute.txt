@@ -23,3 +23,12 @@ C:\Users\lvasq\Downloads\Report2\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Bi
 C:\Users\lvasq\Downloads\Report2\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Bibliote.177274E0.Up2Date
 C:\Users\lvasq\Downloads\Report2\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.dll
 C:\Users\lvasq\Downloads\Report2\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.pdb
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.dll
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.pdb
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\Biblioteca_Reportes\bin\Debug\SUBMENU_VENTAS.dll
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\Biblioteca_Reportes\bin\Debug\SUBMENU_VENTAS.pdb
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.csproj.AssemblyReference.cache
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.csproj.CoreCompileInputs.cache
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Bibliote.177274E0.Up2Date
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.dll
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.pdb

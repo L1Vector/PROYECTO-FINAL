@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\interfaz_submenu_ventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|solutionrelative:interfaz_submenu_ventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|solutionrelative:utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|d:\\escritorio\\submenu_ventas_trabajofinal\\submenu_ventas\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:2:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|solutionrelative:factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\numerador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|solutionrelative:numerador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\logicaventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|solutionrelative:logicaventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\boleta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|solutionrelative:factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|d:\\escritorio\\submenu_ventas_trabajofinal\\submenu_ventas\\boleta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|solutionrelative:boleta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\numerador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|solutionrelative:numerador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\interfaz_submenu_ventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|SUBMENU_VENTAS.csproj|solutionrelative:interfaz_submenu_ventas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85BF80C3-63C8-4AAF-BFB4-8B33BA5ADF98}|BIBLIOTECA_VENTAS.csproj|D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,68 +54,66 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Utilidades.cs",
-              "DocumentMoniker": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\Utilidades.cs",
-              "RelativeDocumentMoniker": "Utilidades.cs",
-              "ToolTip": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\Utilidades.cs",
-              "RelativeToolTip": "Utilidades.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAkwGIAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T03:05:38.226Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Boleta.cs",
-              "DocumentMoniker": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\Boleta.cs",
-              "RelativeDocumentMoniker": "Boleta.cs",
-              "ToolTip": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\Boleta.cs",
-              "RelativeToolTip": "Boleta.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T03:54:43.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Interfaz_submenu_ventas.cs",
               "DocumentMoniker": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\Interfaz_submenu_ventas.cs",
               "RelativeDocumentMoniker": "Interfaz_submenu_ventas.cs",
               "ToolTip": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\Interfaz_submenu_ventas.cs",
               "RelativeToolTip": "Interfaz_submenu_ventas.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAywC4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T01:17:46.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T01:17:46.541Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "LogicaVentas.cs",
               "DocumentMoniker": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\LogicaVentas.cs",
               "RelativeDocumentMoniker": "LogicaVentas.cs",
               "ToolTip": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\LogicaVentas.cs",
               "RelativeToolTip": "LogicaVentas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-24T18:32:13.855Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Utilidades.cs",
+              "DocumentMoniker": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\Utilidades.cs",
+              "RelativeDocumentMoniker": "Utilidades.cs",
+              "ToolTip": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\Utilidades.cs",
+              "RelativeToolTip": "Utilidades.cs",
+              "ViewState": "AgIAANgAAAAAAAAAAAAowHYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T03:05:38.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Boleta.cs",
+              "DocumentMoniker": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\Boleta.cs",
+              "RelativeDocumentMoniker": "Boleta.cs",
+              "ToolTip": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\Boleta.cs",
+              "RelativeToolTip": "Boleta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T03:54:43.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Numerador.cs",
               "DocumentMoniker": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\Numerador.cs",
               "RelativeDocumentMoniker": "Numerador.cs",
               "ToolTip": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\Numerador.cs",
               "RelativeToolTip": "Numerador.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T03:06:07.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T03:06:07.889Z"
             },
             {
               "$type": "Document",
@@ -149,7 +147,7 @@
               "RelativeDocumentMoniker": "Factura.cs",
               "ToolTip": "D:\\Escritorio\\SUBMENU_VENTAS_TRABAJOFINAL\\SUBMENU_VENTAS\\Factura.cs",
               "RelativeToolTip": "Factura.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-24T03:47:31.563Z",
               "EditorCaption": ""

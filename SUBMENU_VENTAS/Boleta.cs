@@ -11,9 +11,8 @@ namespace SUBMENU_VENTAS
             Console.SetCursorPosition(38, 6);
             Console.Write("BOLETA DE VENTA");
 
-            // =====================================================
             // DATOS PRINCIPALES
-            // =====================================================
+
             Console.SetCursorPosition(10, 8);
             Console.Write("DNI CLIENTE:");
             string dniCliente = Utilities.LeerDNI(25, 8);
@@ -27,12 +26,10 @@ namespace SUBMENU_VENTAS
                 Console.Write("DNI NO REGISTRADO. Registre al cliente primero.");
                 Console.ResetColor();
                 Console.ReadKey();
-
                 Utilities.LimpiarZonaTrabajo();
                 return;
             }
 
-            // *** CORREGIDO: FALTABA ETIQUETA CLIENTE ***
             Console.SetCursorPosition(10, 10);
             Console.Write("CLIENTE:");
             Utilities.DibujarCajaLectura(25, 10, nombreCliente, 30);
@@ -42,78 +39,134 @@ namespace SUBMENU_VENTAS
             Console.Write("NRO BOLETA:");
             Utilities.DibujarCajaLectura(73, 8, numeroBoleta, 10);
 
-            // =====================================================
-            // PRODUCTO AUTOCOMPLETADO
-            // =====================================================
+            // TABLA
+
             Console.SetCursorPosition(10, 13); Console.Write("CODIGO");
             Console.SetCursorPosition(23, 13); Console.Write("PRODUCTO");
             Console.SetCursorPosition(38, 13); Console.Write("CANTIDAD");
             Console.SetCursorPosition(55, 13); Console.Write("PRECIO UNI");
             Console.SetCursorPosition(74, 13); Console.Write("MONTO");
 
-            string codigoProd;
-            string producto;
-            double precioUni;
-            int stock;
+            double totalBoleta = 0;
 
-            // ====== INGRESAR CÓDIGO Y VALIDAR ======
+            //  AGREGAR VARIOS PRODUCTOS
+
             while (true)
             {
+                string codigoProd;
+                string producto;
+                double precioUni;
+                int stock;
+
+                // ===== CÓDIGO =====
+                while (true)
+                {
+                    Console.SetCursorPosition(10, 15);
+                    Console.Write(new string(' ', 10));
+                    codigoProd = Utilities.LeerCaja(10, 15, 8).ToUpper();
+
+                    producto = Utilities.BuscarProductoPorCodigo(codigoProd);
+                    precioUni = Utilities.BuscarPrecioPorCodigo(codigoProd);
+                    stock = Utilities.BuscarStockPorCodigo(codigoProd);
+
+                    if (producto != "" && stock >= 0) break;
+
+                    Console.SetCursorPosition(10, 16);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Código NO existe");
+                    Console.ResetColor();
+                    System.Threading.Thread.Sleep(700);
+                    Console.SetCursorPosition(10, 16);
+                    Console.Write(new string(' ', 40));
+                }
+
+                Utilities.DibujarCajaLectura(23, 15, producto, 12);
+                Utilities.DibujarCajaLectura(55, 15, precioUni.ToString("F2"), 10);
+
+                // ===== CANTIDAD =====
+                double cantidad;
+
+                while (true)
+                {
+                    Console.SetCursorPosition(38, 15);
+                    Console.Write(new string(' ', 8));
+                    cantidad = Utilities.LeerNumero(38, 15, 8);
+
+                    if (cantidad <= stock) break;
+
+                    Console.SetCursorPosition(38, 16);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write($"Stock insuficiente (MAX {stock})");
+                    Console.ResetColor();
+                    System.Threading.Thread.Sleep(700);
+
+                    Console.SetCursorPosition(38, 16);
+                    Console.Write(new string(' ', 40));
+                }
+
+                double monto = Math.Round(cantidad * precioUni, 2);
+                Utilities.DibujarCajaLectura(74, 15, monto.ToString("F2"), 10);
+
+                totalBoleta += monto;
+
+                // =====================================================
+                // GUARDAR CADA PRODUCTO EN EL ARREGLO DE DOCUMENTOS
+                // =====================================================
+                LogicaVentas.GuardarBoleta(
+                    numeroBoleta,
+                    dniCliente,
+                    nombreCliente,
+                    "",                          // vendedor aún no ingresado
+                    codigoProd,
+                    producto,
+                    cantidad.ToString(),
+                    precioUni.ToString("F2"),
+                    monto
+                );
+
+                // =====================================================
+                // *** PREGUNTA: ¿AGREGAR OTRO PRODUCTO?
+                // =====================================================
+                string resp = "";
+
+                while (true)
+                {
+                    Console.SetCursorPosition(25, 18);
+                    Console.Write(new string(' ', 40));
+                    Console.SetCursorPosition(25, 18);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("¿Desea agregar otro producto? (S/N): ");
+                    Console.ResetColor();
+
+                    resp = Console.ReadLine().Trim().ToUpper();
+
+                    if (resp == "S" || resp == "N")
+                        break;
+
+                    Console.SetCursorPosition(25, 19);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("ERROR: Solo ingrese S o N");
+                    Console.ResetColor();
+                    System.Threading.Thread.Sleep(900);
+
+                    Console.SetCursorPosition(25, 19);
+                    Console.Write(new string(' ', 40));
+                }
+
+                Console.SetCursorPosition(25, 18);
+                Console.Write(new string(' ', 40));
+
+                if (resp == "N")
+                    break;
+
+                // ===== LIMPIAR FILA DE PRODUCTO =====
+                Console.SetCursorPosition(10, 15); Console.Write(new string(' ', 80));
+                Console.SetCursorPosition(10, 16); Console.Write(new string(' ', 80));
                 Console.SetCursorPosition(10, 15);
-                Console.Write(new string(' ', 10));
-                codigoProd = Utilities.LeerCaja(10, 15, 8).ToUpper();
-
-                producto = Utilities.BuscarProductoPorCodigo(codigoProd);
-                precioUni = Utilities.BuscarPrecioPorCodigo(codigoProd);
-                stock = Utilities.BuscarStockPorCodigo(codigoProd);
-
-                if (producto != "" && stock >= 0)
-                    break;
-
-                Console.SetCursorPosition(10, 16);
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("Código NO existe");
-                Console.ResetColor();
-                System.Threading.Thread.Sleep(700);
-
-                Console.SetCursorPosition(10, 16);
-                Console.Write(new string(' ', 40));
             }
-
-            // *** CORREGIDO: PRODUCTO AHORA SE VE COMPLETO ***
-            Utilities.DibujarCajaLectura(23, 15, producto, 12);
-
-            // *** PRECIO UNI YA SE DIBUJA AUTOMÁTICO ***
-            Utilities.DibujarCajaLectura(55, 15, precioUni.ToString("F2"), 10);
-
-            // ====== INGRESAR CANTIDAD VALIDADA ======
-            double cantidad;
-
-            while (true)
-            {
-                Console.SetCursorPosition(38, 15);
-                Console.Write(new string(' ', 8));
-                cantidad = Utilities.LeerNumero(38, 15, 8);
-
-                if (cantidad <= stock)
-                    break;
-
-                Console.SetCursorPosition(38, 16);
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write($"Stock insuficiente (MAX {stock})");
-                Console.ResetColor();
-                System.Threading.Thread.Sleep(700);
-
-                Console.SetCursorPosition(38, 16);
-                Console.Write(new string(' ', 40));
-            }
-
-            // MONTO AUTOMÁTICO
-            double monto = Math.Round(cantidad * precioUni, 2);
-            Utilities.DibujarCajaLectura(74, 15, monto.ToString("F2"), 10);
 
             // =====================================================
-            // VENDEDOR + TOTAL
+            // VENDEDOR + TOTAL FINAL
             // =====================================================
             Console.SetCursorPosition(10, 19);
             Console.Write("DNI VENDEDOR:");
@@ -121,10 +174,10 @@ namespace SUBMENU_VENTAS
 
             Console.SetCursorPosition(62, 19);
             Console.Write("TOTAL:");
-            Utilities.DibujarCajaLectura(69, 19, monto.ToString("F2"), 10);
+            Utilities.DibujarCajaLectura(69, 19, totalBoleta.ToString("F2"), 10);
 
             // =====================================================
-            // GUARDAR O CANCELAR
+            // GUARDAR / CANCELAR
             // =====================================================
             bool guardar = Utilities.MenuGuardarCancelar();
 
@@ -132,17 +185,17 @@ namespace SUBMENU_VENTAS
             {
                 Numerador.ConsumirBoleta();
 
-                LogicaVentas.GuardarBoleta(
-                    numeroBoleta,
-                    dniCliente,
-                    nombreCliente,
-                    dniVend,
-                    codigoProd,
-                    producto,
-                    cantidad.ToString(),
-                    precioUni.ToString(),
-                    monto
-                );
+                // *** YA NO SE GUARDA "VARIOS" ***
+                // porque cada producto ya fue guardado arriba
+
+                // Ahora SOLO actualizamos el DNI del vendedor en cada fila de esta boleta
+                for (int i = 0; i < LogicaVentas.Documentos.GetLength(0); i++)
+                {
+                    if (LogicaVentas.Documentos[i, 1] == numeroBoleta)
+                    {
+                        LogicaVentas.Documentos[i, 4] = dniVend;
+                    }
+                }
 
                 Console.SetCursorPosition(30, 25);
                 Console.Write("BOLETA GUARDADA.");

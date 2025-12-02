@@ -32,7 +32,6 @@ C:\Users\lvasq\Downloads\Venta\SUBMENU_VENTAS\bin\Debug\BIBLIOTECA_REGISTRA.dll
 C:\Users\lvasq\Downloads\Venta\SUBMENU_VENTAS\bin\Debug\BIBLIOTECA_REGISTRA.pdb
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.pdb
-C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SUBMENU_VENTAS\bin\Debug\BIBLIOTECA_REGISTRA.pdb
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.csproj.AssemblyReference.cache
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.csproj.CoreCompileInputs.cache
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\SUBMENU_VENTAS\obj\Debug\SUBMENU_.2BD41A08.Up2Date

@@ -73,12 +73,9 @@ namespace SUBMENU_VENTAS
                     Console.SetCursorPosition(10, 16);
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("Código NO existe");
-                    Console.SetCursorPosition(10, 17);
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("Presione cualquier tecla para reintentar...");
                     Console.ResetColor();
                     Console.ReadKey();
-                    Console.SetCursorPosition(10, 17);
+                    Console.SetCursorPosition(10, 16);
                     Console.Write(new string(' ', 40));
                 }
 
@@ -99,13 +96,10 @@ namespace SUBMENU_VENTAS
                     Console.SetCursorPosition(38, 16);
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write($"Stock insuficiente (MAX {stock})");
-                    Console.SetCursorPosition(38, 17);
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("Presione cualquier tecla para reintentar...");
                     Console.ResetColor();
                     Console.ReadKey();
 
-                    Console.SetCursorPosition(38, 17);
+                    Console.SetCursorPosition(38, 16);
                     Console.Write(new string(' ', 40));
                 }
 
@@ -151,13 +145,10 @@ namespace SUBMENU_VENTAS
                     Console.SetCursorPosition(25, 19);
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("ERROR: Solo ingrese S o N");
-                    Console.SetCursorPosition(25, 20);
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("Presione cualquier tecla para reintentar...");
                     Console.ResetColor();
                     Console.ReadKey();
 
-                    Console.SetCursorPosition(25, 20);
+                    Console.SetCursorPosition(25, 19);
                     Console.Write(new string(' ', 40));
                 }
 

@@ -38,7 +38,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Registro\BIBLIOTECA_REGISTRA\bin\Debug\BIBLIOTECA_REGISTRA.dll</HintPath>
     </Reference>
-    <Reference Include="Biblioteca_Reportes">
+    <Reference Include="Biblioteca_Reportes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Report2\Proyecto-Final\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.dll</HintPath>
     </Reference>
     <Reference Include="Biblio_SysVentas, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">

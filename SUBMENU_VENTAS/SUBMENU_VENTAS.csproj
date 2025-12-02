@@ -31,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BIBLIOTECA_REGISTRA">
-      <HintPath>..\..\BIBLIOTECA_ARIANA\Proyecto-Final\BIBLIOTECA_REGISTRA\bin\Debug\BIBLIOTECA_REGISTRA.dll</HintPath>
+    <Reference Include="BIBLIOTECA_REGISTRA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Registro\BIBLIOTECA_REGISTRA\bin\Debug\BIBLIOTECA_REGISTRA.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,12 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boleta.cs" />
-    <Compile Include="Interfaz_submenu_ventas.cs" />
     <Compile Include="LogicaVentas.cs" />
     <Compile Include="Factura.cs" />
     <Compile Include="Numerador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilidades.cs" />
+    <Compile Include="Utilities.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

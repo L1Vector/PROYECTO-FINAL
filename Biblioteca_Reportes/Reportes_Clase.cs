@@ -6,18 +6,15 @@ namespace Biblioteca_Reportes
 {
     public class Reportes_Clase
     {
-        private const int InicioX = 2;
-        private const int InicioY = 6;
-
         // --- Método de entrada (Llamado desde el Programa Principal) ---
         public static void MostrarReporte(string tipoReporte)
         {
-            LimpiarAreaReporte();
+            Optimización.LimpiarAreaReporte();
 
             // Título
-            Console.SetCursorPosition(InicioX, InicioY);
+            Console.SetCursorPosition(Variables.InicioX, Variables.InicioY);
             Console.WriteLine($"-------------------------------- REPORTE DE {tipoReporte.ToUpper()} -----------------------------------");
-            Console.SetCursorPosition(InicioX, InicioY + 1);
+            Console.SetCursorPosition(Variables.InicioX, Variables.InicioY + 1);
             Console.WriteLine(new string('-', 88));
 
             switch (tipoReporte.ToUpper())
@@ -61,12 +58,12 @@ namespace Biblioteca_Reportes
                     break;
 
                 default:
-                    Console.SetCursorPosition(InicioX, InicioY + 3);
+                    Console.SetCursorPosition(Variables.InicioX, Variables.InicioY + 3);
                     Console.WriteLine($"Error: Tipo de reporte '{tipoReporte}' no encontrado.");
                     break;
             }
 
-            PausaYLimpieza();
+            Optimización.PausaYLimpieza();
         }
 
         // =================================================================
@@ -75,27 +72,27 @@ namespace Biblioteca_Reportes
 
         private static void GenerarReporteProductos()
         {
-            string[,] datos = BibliotecaRegistra.Productos;
-            int filaActual = InicioY + 3;
+            string[,] datos = Arreglos.Productos;
+            int filaActual = Variables.InicioY + 3;
 
-            EscribirFila(filaActual++, InicioX,
+            Optimización.EscribirFila(filaActual++, Variables.InicioX,
                 "CÓDIGO", 10,
                 "NOMBRE", 25,
                 "CATEGORÍA", 15,
                 "STOCK", 10,
                 "PRECIO", 15);
 
-            EscribirLineaSeparadora(filaActual++);
+            Optimización.EscribirLineaSeparadora(filaActual++);
 
             if (datos.GetLength(0) == 0)
             {
-                EscribirMensajeSinDatos(filaActual++);
+                Optimización.EscribirMensajeSinDatos(filaActual++);
                 return;
             }
 
             for (int i = 0; i < datos.GetLength(0); i++)
             {
-                EscribirFila(filaActual++, InicioX,
+                Optimización.EscribirFila(filaActual++, Variables.InicioX,
                     datos[i, 0], 10,
                     datos[i, 1], 25,
                     datos[i, 2], 15,
@@ -106,27 +103,27 @@ namespace Biblioteca_Reportes
 
         private static void GenerarReporteClientes()
         {
-            string[,] datos = BibliotecaRegistra.Clientes;
-            int filaActual = InicioY + 3;
+            string[,] datos = Arreglos.Clientes;
+            int filaActual = Variables.InicioY + 3;
 
-            EscribirFila(filaActual++, InicioX,
+            Optimización.EscribirFila(filaActual++, Variables.InicioX,
                 "DNI", 10,
                 "NOMBRES", 20,
                 "APELLIDOS", 20,
                 "TELÉFONO", 15,
                 "EMAIL", 20);
 
-            EscribirLineaSeparadora(filaActual++);
+            Optimización.EscribirLineaSeparadora(filaActual++);
 
             if (datos.GetLength(0) == 0)
             {
-                EscribirMensajeSinDatos(filaActual++);
+                Optimización.EscribirMensajeSinDatos(filaActual++);
                 return;
             }
 
             for (int i = 0; i < datos.GetLength(0); i++)
             {
-                EscribirFila(filaActual++, InicioX,
+                Optimización.EscribirFila(filaActual++, Variables.InicioX,
                     datos[i, 0], 10,
                     datos[i, 1], 20,
                     datos[i, 2], 20,
@@ -137,27 +134,27 @@ namespace Biblioteca_Reportes
 
         private static void GenerarReporteVendedores()
         {
-            string[,] datos = BibliotecaRegistra.Vendedores;
-            int filaActual = InicioY + 3;
+            string[,] datos = Arreglos.Vendedores;
+            int filaActual = Variables.InicioY + 3;
 
-            EscribirFila(filaActual++, InicioX,
+            Optimización.EscribirFila(filaActual++, Variables.InicioX,
                 "CÓDIGO", 10,
                 "NOMBRES", 20,
                 "APELLIDOS", 20,
                 "SUELDO", 15,
                 "TELÉFONO", 15);
 
-            EscribirLineaSeparadora(filaActual++);
+            Optimización.EscribirLineaSeparadora(filaActual++);
 
             if (datos.GetLength(0) == 0)
             {
-                EscribirMensajeSinDatos(filaActual++);
+                Optimización.EscribirMensajeSinDatos(filaActual++);
                 return;
             }
 
             for (int i = 0; i < datos.GetLength(0); i++)
             {
-                EscribirFila(filaActual++, InicioX,
+                Optimización.EscribirFila(filaActual++, Variables.InicioX,
                     datos[i, 0], 10,
                     datos[i, 1], 20,
                     datos[i, 2], 20,
@@ -169,11 +166,11 @@ namespace Biblioteca_Reportes
         private static void GenerarReporteProveedores()
         {
             // [CódigoProveedor, Empresa, RUC, Representante, Teléfono, Dirección, Ciudad]
-            string[,] datos = BibliotecaRegistra.Proveedores;
-            int filaActual = InicioY + 3;
+            string[,] datos = Arreglos.Proveedores;
+            int filaActual = Variables.InicioY + 3;
 
             // Cabecera corregida
-            EscribirFila(filaActual++, InicioX,
+            Optimización.EscribirFila(filaActual++, Variables.InicioX,
                 "CÓDIGO", 10,
                 "EMPRESA", 20,
                 "RUC", 12,
@@ -181,17 +178,17 @@ namespace Biblioteca_Reportes
                 "TELÉFONO", 12,
                 "CIUDAD", 12);
 
-            EscribirLineaSeparadora(filaActual++);
+            Optimización.EscribirLineaSeparadora(filaActual++);
 
             if (datos.GetLength(0) == 0)
             {
-                EscribirMensajeSinDatos(filaActual++);
+                Optimización.EscribirMensajeSinDatos(filaActual++);
                 return;
             }
 
             for (int i = 0; i < datos.GetLength(0); i++)
             {
-                EscribirFila(filaActual++, InicioX,
+                Optimización.EscribirFila(filaActual++, Variables.InicioX,
                     datos[i, 0], 10,   // Código proveedor
                     datos[i, 1], 20,   // Empresa
                     datos[i, 2], 12,   // RUC
@@ -209,7 +206,7 @@ namespace Biblioteca_Reportes
         private static void GenerarReporteDocumentos(string tipoDocumento)
         {
             string[,] datosVentas = LogicaVentas.Documentos;
-            int filaActual = InicioY + 3;
+            int filaActual = Variables.InicioY + 3;
 
             // ======= TITULO DEPENDIENDO DEL TIPO =======
             string tituloCliente = "CLIENTE";
@@ -222,18 +219,18 @@ namespace Biblioteca_Reportes
                 tituloCliente = "CLIENTE";
 
             // ======= CABECERA =======
-            EscribirFila(filaActual++, InicioX,
+            Optimización.EscribirFila(filaActual++, Variables.InicioX,
                 "NRO. DOC", 12,
                 tituloCliente, 25,
                 "PRODUCTO", 25,
                 "CANT", 6,
                 "TOTAL", 15);
 
-            EscribirLineaSeparadora(filaActual++);
+            Optimización.EscribirLineaSeparadora(filaActual++);
 
             if (datosVentas.GetLength(0) == 0)
             {
-                EscribirMensajeSinDatos(filaActual++);
+                Optimización.EscribirMensajeSinDatos(filaActual++);
                 return;
             }
 
@@ -245,7 +242,7 @@ namespace Biblioteca_Reportes
                 {
                     datosEncontrados = true;
 
-                    EscribirFila(filaActual++, InicioX,
+                    Optimización.EscribirFila(filaActual++, Variables.InicioX,
                         datosVentas[i, 1], 12,   // Nro Doc
                         datosVentas[i, 3], 25,   // Empresa / Cliente
                         datosVentas[i, 6], 25,   // Producto
@@ -257,7 +254,7 @@ namespace Biblioteca_Reportes
             if (!datosEncontrados)
 
             {
-                EscribirMensajeSinDatos(filaActual++);
+                Optimización.EscribirMensajeSinDatos(filaActual++);
             }
         }
 
@@ -266,54 +263,5 @@ namespace Biblioteca_Reportes
         // AUXILIARES
         // =================================================================
 
-        private static void PausaYLimpieza()
-        {
-            Console.SetCursorPosition(InicioX, 24);
-            Console.Write("Presione una tecla para regresar al menú principal...");
-            Console.ReadKey(true);
-            LimpiarAreaReporte();
-        }
-
-        private static void LimpiarAreaReporte()
-        {
-            for (int i = 5; i < 26; i++)
-            {
-                Console.SetCursorPosition(1, i);
-                Console.Write(new string(' ', 87));
-            }
-        }
-
-        private static void EscribirMensajeSinDatos(int fila)
-        {
-            Console.SetCursorPosition(InicioX, fila);
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("No hay datos registrados.");
-            Console.ResetColor();
-            Console.ReadKey();
-        }
-
-        private static void EscribirFila(int fila, int xInicial, params object[] columnas)
-        {
-            int posX = xInicial;
-
-            for (int i = 0; i < columnas.Length; i += 2)
-            {
-                string valor = columnas[i].ToString();
-                int ancho = (int)columnas[i + 1];
-
-                string texto = valor.PadRight(ancho).Substring(0, ancho);
-
-                Console.SetCursorPosition(posX, fila);
-                Console.Write(texto);
-
-                posX += ancho;
-            }
-        }
-
-        private static void EscribirLineaSeparadora(int fila)
-        {
-            Console.SetCursorPosition(InicioX, fila);
-            Console.WriteLine(new string('-', 80));
-        }
     }
 }

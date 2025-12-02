@@ -9,9 +9,24 @@ D:\Escritorio\SUBMENU_VENTAS_TRABAJOFINAL\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTA
 D:\Escritorio\SUBMENU_VENTAS_TRABAJOFINAL\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.pdb
 C:\Users\lvasq\Downloads\Venta\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll
 C:\Users\lvasq\Downloads\Venta\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.pdb
-C:\Users\lvasq\Downloads\Venta\SUBMENU_VENTAS\bin\Debug\BIBLIOTECA_REGISTRA.pdb
 C:\Users\lvasq\Downloads\Venta\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.csproj.AssemblyReference.cache
 C:\Users\lvasq\Downloads\Venta\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.csproj.CoreCompileInputs.cache
 C:\Users\lvasq\Downloads\Venta\SUBMENU_VENTAS\obj\Debug\SUBMENU_.2BD41A08.Up2Date
 C:\Users\lvasq\Downloads\Venta\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.dll
 C:\Users\lvasq\Downloads\Venta\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.pdb
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.pdb
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.csproj.AssemblyReference.cache
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.csproj.CoreCompileInputs.cache
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_.2BD41A08.Up2Date
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.dll
+D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.pdb
+C:\Users\lvasq\OneDrive\Escritorio\Programación\Programa Final - Versión MH\Proyecto-Final\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll
+C:\Users\lvasq\OneDrive\Escritorio\Programación\Programa Final - Versión MH\Proyecto-Final\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.pdb
+C:\Users\lvasq\OneDrive\Escritorio\Programación\Programa Final - Versión MH\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.csproj.AssemblyReference.cache
+C:\Users\lvasq\OneDrive\Escritorio\Programación\Programa Final - Versión MH\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.csproj.CoreCompileInputs.cache
+C:\Users\lvasq\OneDrive\Escritorio\Programación\Programa Final - Versión MH\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_.2BD41A08.Up2Date
+C:\Users\lvasq\OneDrive\Escritorio\Programación\Programa Final - Versión MH\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.dll
+C:\Users\lvasq\OneDrive\Escritorio\Programación\Programa Final - Versión MH\Proyecto-Final\SUBMENU_VENTAS\obj\Debug\SUBMENU_VENTAS.pdb
+C:\Users\lvasq\Downloads\Venta\SUBMENU_VENTAS\bin\Debug\BIBLIOTECA_REGISTRA.dll
+C:\Users\lvasq\Downloads\Venta\SUBMENU_VENTAS\bin\Debug\BIBLIOTECA_REGISTRA.pdb

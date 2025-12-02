@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.Design;
 using BIBLIOTECA_REGISTRA;
 
 namespace SUBMENU_VENTAS
@@ -81,7 +80,7 @@ namespace SUBMENU_VENTAS
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("DNI inválido.");
                 Console.ResetColor();
-                System.Threading.Thread.Sleep(700);
+                Console.ReadKey();
 
                 Console.SetCursorPosition(x, y + 1);
                 Console.Write(new string(' ', 25));
@@ -105,7 +104,7 @@ namespace SUBMENU_VENTAS
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("RUC inválido.");
                 Console.ResetColor();
-                System.Threading.Thread.Sleep(700);
+                Console.ReadKey();
 
                 Console.SetCursorPosition(x, y + 1);
                 Console.Write(new string(' ', 25));
@@ -129,7 +128,7 @@ namespace SUBMENU_VENTAS
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("Número inválido.");
                 Console.ResetColor();
-                System.Threading.Thread.Sleep(600);
+                Console.ReadKey();
 
                 Console.SetCursorPosition(x, y + 1);
                 Console.Write(new string(' ', 25));
@@ -142,11 +141,11 @@ namespace SUBMENU_VENTAS
         // =====================================================
         public static string BuscarClientePorDNI(string dni)
         {
-            for (int i = 0; i < BibliotecaRegistra.Clientes.GetLength(0); i++)
+            for (int i = 0; i < Arreglos.Clientes.GetLength(0); i++)
             {
-                if (BibliotecaRegistra.Clientes[i, 0] == dni)
-                    return BibliotecaRegistra.Clientes[i, 1] + " " +
-                           BibliotecaRegistra.Clientes[i, 2];
+                if (Arreglos.Clientes[i, 0] == dni)
+                    return Arreglos.Clientes[i, 1] + " " +
+                           Arreglos.Clientes[i, 2];
             }
             return "";
         }
@@ -156,22 +155,22 @@ namespace SUBMENU_VENTAS
         // =====================================================
         public static string BuscarProductoPorCodigo(string codigo)
         {
-            for (int i = 0; i < BibliotecaRegistra.Productos.GetLength(0); i++)
+            for (int i = 0; i < Arreglos.Productos.GetLength(0); i++)
             {
-                if (BibliotecaRegistra.Productos[i, 0].ToUpper() == codigo.ToUpper())
-                    return BibliotecaRegistra.Productos[i, 1];
+                if (Arreglos.Productos[i, 0].ToUpper() == codigo.ToUpper())
+                    return Arreglos.Productos[i, 1];
             }
             return "";
         }
 
         public static double BuscarPrecioPorCodigo(string codigo)
         {
-            for (int i = 0; i < BibliotecaRegistra.Productos.GetLength(0); i++)
+            for (int i = 0; i < Arreglos.Productos.GetLength(0); i++)
             {
-                if (BibliotecaRegistra.Productos[i, 0].ToUpper() == codigo.ToUpper())
+                if (Arreglos.Productos[i, 0].ToUpper() == codigo.ToUpper())
                 {
-                    double.TryParse(BibliotecaRegistra.Productos[i, 4], out double p);
-                    return p;
+                    double.TryParse(Arreglos.Productos[i, 4], out double p);
+                    return p;   
                 }
             }
             return 0;
@@ -179,11 +178,11 @@ namespace SUBMENU_VENTAS
 
         public static int BuscarStockPorCodigo(string codigo)
         {
-            for (int i = 0; i < BibliotecaRegistra.Productos.GetLength(0); i++)
+            for (int i = 0; i < Arreglos.Productos.GetLength(0); i++)
             {
-                if (BibliotecaRegistra.Productos[i, 0].ToUpper() == codigo.ToUpper())
+                if (Arreglos.Productos[i, 0].ToUpper() == codigo.ToUpper())
                 {
-                    int.TryParse(BibliotecaRegistra.Productos[i, 3], out int s);
+                    int.TryParse(Arreglos.Productos[i, 3], out int s);
                     return s;
                 }
             }
@@ -263,11 +262,11 @@ namespace SUBMENU_VENTAS
         }
         public static string BuscarEmpresaPorRUC(string ruc)
         {
-            for (int i = 0; i < BibliotecaRegistra.Proveedores.GetLength(0); i++)
+            for (int i = 0; i < Arreglos.Proveedores.GetLength(0); i++)
             {
-                if (BibliotecaRegistra.Proveedores[i, 2] == ruc) // columna 2 = RUC
+                if (Arreglos.Proveedores[i, 2] == ruc) // columna 2 = RUC
                 {
-                    return BibliotecaRegistra.Proveedores[i, 1]; // columna 1 = Empresa
+                    return Arreglos.Proveedores[i, 1]; // columna 1 = Empresa
                 }
             }
             return "";

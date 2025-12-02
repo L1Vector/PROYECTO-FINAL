@@ -31,14 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BIBLIOTECA_REGISTRA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Registro\BIBLIOTECA_REGISTRA\bin\Debug\BIBLIOTECA_REGISTRA.dll</HintPath>
-    </Reference>
-    <Reference Include="SUBMENU_VENTAS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Venta\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +45,16 @@
     <Compile Include="Reportes_Clase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Variables.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BIBLIOTECA_REGISTRA\BIBLIOTECA_REGISTRA.csproj">
+      <Project>{e4396cab-032e-47d2-8851-cbad1c46a6a9}</Project>
+      <Name>BIBLIOTECA_REGISTRA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SUBMENU_VENTAS\SUBMENU_VENTAS.csproj">
+      <Project>{85bf80c3-63c8-4aaf-bfb4-8b33ba5adf98}</Project>
+      <Name>SUBMENU_VENTAS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

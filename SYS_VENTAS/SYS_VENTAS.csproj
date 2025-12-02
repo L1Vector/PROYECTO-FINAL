@@ -34,22 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BIBLIOTECA_REGISTRA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\BIBLIOTECA_REGISTRA\bin\Debug\BIBLIOTECA_REGISTRA.dll</HintPath>
-    </Reference>
-    <Reference Include="Biblioteca_Reportes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.dll</HintPath>
-    </Reference>
-    <Reference Include="Biblio_SysVentas, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Biblio_SysVentas\bin\Debug\Biblio_SysVentas.dll</HintPath>
-    </Reference>
-    <Reference Include="SUBMENU_VENTAS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -66,6 +50,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BIBLIOTECA_REGISTRA\BIBLIOTECA_REGISTRA.csproj">
+      <Project>{e4396cab-032e-47d2-8851-cbad1c46a6a9}</Project>
+      <Name>BIBLIOTECA_REGISTRA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Biblioteca_Reportes\Biblioteca_Reportes.csproj">
+      <Project>{a7ca3086-f9bf-4e0d-94cd-cbcd86252579}</Project>
+      <Name>Biblioteca_Reportes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Biblio_SysVentas\Biblio_SysVentas.csproj">
+      <Project>{8c100632-45cb-4176-884d-5e3ef9e9f41b}</Project>
+      <Name>Biblio_SysVentas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SUBMENU_VENTAS\SUBMENU_VENTAS.csproj">
+      <Project>{85bf80c3-63c8-4aaf-bfb4-8b33ba5adf98}</Project>
+      <Name>SUBMENU_VENTAS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,6 +19,9 @@ namespace SUBMENU_VENTAS
 
             string empresa = Utilities.BuscarEmpresaPorRUC(ruc);
 
+            // =====================================================
+            //  SI EL RUC NO EXISTE - VOLVER AL MENÚ
+            // =====================================================
             if (string.IsNullOrEmpty(empresa))
             {
                 Console.SetCursorPosition(20, 10);
@@ -26,8 +29,10 @@ namespace SUBMENU_VENTAS
                 Console.Write("RUC NO REGISTRADO. Registre la empresa primero.");
                 Console.ResetColor();
                 Console.ReadKey();
+
                 Utilities.LimpiarZonaTrabajo();
-                return;
+
+                return;  
             }
 
             Console.SetCursorPosition(10, 10);
@@ -87,50 +92,92 @@ namespace SUBMENU_VENTAS
                 Utilities.DibujarCajaLectura(23, 15, producto, 10);
                 Utilities.DibujarCajaLectura(55, 15, precioUni.ToString("F2"), 10);
 
-                // ====== CANTIDAD ======
+                // ===============================================
+                //                CANTIDAD
+                // ===============================================
+
                 double cantidad;
 
-                while (true)
+                if (stock == 0)
                 {
-                    Console.SetCursorPosition(38, 15);
-                    Console.Write(new string(' ', 8));
-                    cantidad = Utilities.LeerNumero(38, 15, 8);
-
-                    if (cantidad <= stock)
-                        break;
-
-                    Console.SetCursorPosition(38, 16);
+                    Console.SetCursorPosition(25, 18);
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write($"Stock insuficiente (MAX {stock})");
+                    Console.Write("PRODUCTO SIN STOCK.");
                     Console.ResetColor();
                     Console.ReadKey();
 
-                    Console.SetCursorPosition(38, 16);
-                    Console.Write(new string(' ', 40));
+                    cantidad = 0;
+                }
+                else
+                {
+                    while (true)
+                    {
+                        Console.SetCursorPosition(38, 15);
+                        Console.Write(new string(' ', 8));
+                        cantidad = Utilities.LeerNumero(38, 15, 8);
+
+                        if (cantidad <= 0)
+                        {
+                            Console.SetCursorPosition(38, 16);
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("Cantidad debe ser mayor a 0");
+                            Console.ResetColor();
+                            Console.ReadKey();
+                            Console.SetCursorPosition(38, 16);
+                            Console.Write(new string(' ', 40));
+                            continue;
+                        }
+
+                        if (cantidad > stock)
+                        {
+                            Console.SetCursorPosition(38, 16);
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write($"Stock insuficiente (MAX {stock})");
+                            Console.ResetColor();
+                            Console.ReadKey();
+                            Console.SetCursorPosition(38, 16);
+                            Console.Write(new string(' ', 40));
+                            continue;
+                        }
+
+                        // RESTAR STOCK
+                        int nuevoStock = stock - (int)cantidad;
+
+                        for (int i = 0; i < BIBLIOTECA_REGISTRA.Arreglos.Productos.GetLength(0); i++)
+                        {
+                            if (BIBLIOTECA_REGISTRA.Arreglos.Productos[i, 0] == codigoProd)
+                            {
+                                BIBLIOTECA_REGISTRA.Arreglos.Productos[i, 3] = nuevoStock.ToString();
+                                break;
+                            }
+                        }
+
+                        break;
+                    }
                 }
 
                 double monto = Math.Round(cantidad * precioUni, 2);
-                Utilities.DibujarCajaLectura(74, 15, monto.ToString("F2"), 10);
 
-                totalFactura += monto;
+                if (cantidad > 0)
+                {
+                    Utilities.DibujarCajaLectura(74, 15, monto.ToString("F2"), 10);
+                    totalFactura += monto;
+
+                    LogicaVentas.GuardarFactura(
+                        ruc,
+                        empresa,
+                        nroFactura,
+                        codigoProd,
+                        producto,
+                        cantidad.ToString(),
+                        precioUni.ToString("F2"),
+                        monto,
+                        ""
+                    );
+                }
 
                 // =====================================================
-                // GUARDAR FILA DEL PRODUCTO
-                // =====================================================
-                LogicaVentas.GuardarFactura(
-                    ruc,
-                    empresa,
-                    nroFactura,
-                    codigoProd,
-                    producto,
-                    cantidad.ToString(),
-                    precioUni.ToString("F2"),
-                    monto,
-                    "" // vendedor se coloca después
-                );
-
-                // =====================================================
-                // PREGUNTA: ¿AGREGAR OTRO PRODUCTO?
+                // PREGUNTA SI DESEA AGREGAR OTRO
                 // =====================================================
                 string resp = "";
 
@@ -163,7 +210,7 @@ namespace SUBMENU_VENTAS
 
                 if (resp == "N") break;
 
-                // LIMPIAR PARA SIGUIENTE PRODUCTO
+                // LIMPIAR PARA SIGUIENTE
                 Console.SetCursorPosition(10, 15); Console.Write(new string(' ', 80));
                 Console.SetCursorPosition(10, 16); Console.Write(new string(' ', 80));
                 Console.SetCursorPosition(10, 15);
@@ -180,16 +227,12 @@ namespace SUBMENU_VENTAS
             Console.Write("TOTAL:");
             Utilities.DibujarCajaLectura(69, 19, totalFactura.ToString("F2"), 10);
 
-            // =====================================================
-            // GUARDAR O CANCELAR
-            // =====================================================
             bool guardar = Utilities.MenuGuardarCancelar();
 
             if (guardar)
             {
                 Numerador.ConsumirFactura();
 
-                // ASIGNAR VENDEDOR A TODAS LAS FILAS DE ESTA FACTURA
                 for (int i = 0; i < LogicaVentas.Documentos.GetLength(0); i++)
                 {
                     if (LogicaVentas.Documentos[i, 1] == nroFactura)

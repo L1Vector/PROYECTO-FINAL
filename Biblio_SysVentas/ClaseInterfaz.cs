@@ -9,16 +9,16 @@ namespace Biblio_SysVentas
             //Creamos el encabezado el programa
             Console.BackgroundColor = ConsoleColor.Yellow;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.Write("                                                                                          ");
-            Console.Write("                            SITEMA PARA GESTIONAR VENTAS                                  ");
-            Console.Write("                                                                                          ");
+            Console.WriteLine("                                                                                          ");
+            Console.WriteLine("                            SITEMA PARA GESTIONAR VENTAS                                  ");
+            Console.WriteLine("                                                                                          ");
             Console.ResetColor();
 
             //Creamos el espacio para el menu
             Console.SetCursorPosition(0, 4);
             Console.BackgroundColor = ConsoleColor.Yellow;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.Write("                                                                                          ");
+            Console.WriteLine("                                                                                          ");
             Console.ResetColor();
 
             //Creamos el contorno izquierdo de la interfaz
@@ -27,7 +27,7 @@ namespace Biblio_SysVentas
                 Console.SetCursorPosition(0, i);
                 Console.BackgroundColor = ConsoleColor.Yellow;
                 Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write(" ");
+                Console.WriteLine(" ");
                 Console.ResetColor();
             }
             //Creamos el contorno derecho de la interfaz
@@ -37,7 +37,7 @@ namespace Biblio_SysVentas
                 Console.SetCursorPosition(89, i);
                 Console.BackgroundColor = ConsoleColor.Yellow;
                 Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write(" ");
+                Console.WriteLine(" ");
                 Console.ResetColor();
             }
 
@@ -45,7 +45,7 @@ namespace Biblio_SysVentas
             Console.SetCursorPosition(0, 26);
             Console.BackgroundColor = ConsoleColor.Yellow;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.Write("                                                                                          ");
+            Console.WriteLine("                                                                                          ");
             Console.ResetColor();
         }
     }

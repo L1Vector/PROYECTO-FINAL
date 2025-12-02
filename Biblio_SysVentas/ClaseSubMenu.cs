@@ -33,13 +33,13 @@ public class ClaseSubMenu
                 if (indice == i)
                 {
                     // Opción seleccionada: Texto Negro sobre fondo Blanco
-                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.BackgroundColor = ConsoleColor.Green;
                     Console.ForegroundColor = ConsoleColor.Black;
                 }
                 else
                 {
                     // Opción normal: Texto Blanco sobre fondo Negro (o el color del fondo)
-                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.BackgroundColor = ConsoleColor.White;
                     Console.ForegroundColor = ConsoleColor.Black;
                 }
 

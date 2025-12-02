@@ -45,3 +45,25 @@ C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblioteca_Reportes\obj\Debug\Bib
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblioteca_Reportes\obj\Debug\Bibliote.177274E0.Up2Date
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.dll
 C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.pdb
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.dll
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.pdb
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\bin\Debug\BIBLIOTECA_REGISTRA.dll
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\bin\Debug\SUBMENU_VENTAS.dll
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\bin\Debug\BIBLIOTECA_REGISTRA.pdb
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\bin\Debug\SUBMENU_VENTAS.pdb
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.csproj.AssemblyReference.cache
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.csproj.CoreCompileInputs.cache
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Bibliote.177274E0.Up2Date
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.dll
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.pdb
+C:\Users\lvasq\Downloads\PROYECT_FINAL_ULTIMO_DIA[1]\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.dll
+C:\Users\lvasq\Downloads\PROYECT_FINAL_ULTIMO_DIA[1]\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.pdb
+C:\Users\lvasq\Downloads\PROYECT_FINAL_ULTIMO_DIA[1]\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\bin\Debug\BIBLIOTECA_REGISTRA.dll
+C:\Users\lvasq\Downloads\PROYECT_FINAL_ULTIMO_DIA[1]\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\bin\Debug\SUBMENU_VENTAS.dll
+C:\Users\lvasq\Downloads\PROYECT_FINAL_ULTIMO_DIA[1]\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\bin\Debug\BIBLIOTECA_REGISTRA.pdb
+C:\Users\lvasq\Downloads\PROYECT_FINAL_ULTIMO_DIA[1]\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\bin\Debug\SUBMENU_VENTAS.pdb
+C:\Users\lvasq\Downloads\PROYECT_FINAL_ULTIMO_DIA[1]\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.csproj.AssemblyReference.cache
+C:\Users\lvasq\Downloads\PROYECT_FINAL_ULTIMO_DIA[1]\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.csproj.CoreCompileInputs.cache
+C:\Users\lvasq\Downloads\PROYECT_FINAL_ULTIMO_DIA[1]\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Bibliote.177274E0.Up2Date
+C:\Users\lvasq\Downloads\PROYECT_FINAL_ULTIMO_DIA[1]\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.dll
+C:\Users\lvasq\Downloads\PROYECT_FINAL_ULTIMO_DIA[1]\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.pdb

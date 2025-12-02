@@ -10,3 +10,9 @@ C:\Users\lvasq\Downloads\Registro\BIBLIOTECA_REGISTRA\obj\Debug\BIBLIOTECA_REGIS
 C:\Users\lvasq\Downloads\Registro\BIBLIOTECA_REGISTRA\obj\Debug\BIBLIOTECA_REGISTRA.csproj.CoreCompileInputs.cache
 C:\Users\lvasq\Downloads\Registro\BIBLIOTECA_REGISTRA\obj\Debug\BIBLIOTECA_REGISTRA.dll
 C:\Users\lvasq\Downloads\Registro\BIBLIOTECA_REGISTRA\obj\Debug\BIBLIOTECA_REGISTRA.pdb
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\BIBLIOTECA_REGISTRA\bin\Debug\BIBLIOTECA_REGISTRA.dll
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\BIBLIOTECA_REGISTRA\bin\Debug\BIBLIOTECA_REGISTRA.pdb
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\BIBLIOTECA_REGISTRA\obj\Debug\BIBLIOTECA_REGISTRA.csproj.AssemblyReference.cache
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\BIBLIOTECA_REGISTRA\obj\Debug\BIBLIOTECA_REGISTRA.csproj.CoreCompileInputs.cache
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\BIBLIOTECA_REGISTRA\obj\Debug\BIBLIOTECA_REGISTRA.dll
+D:\Escritorio\PROYECT_FINAL_ULTIMO_DIA\Proyecto-Final\BIBLIOTECA_REGISTRA\obj\Debug\BIBLIOTECA_REGISTRA.pdb

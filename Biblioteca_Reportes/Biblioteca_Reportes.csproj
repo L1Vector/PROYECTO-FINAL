@@ -37,7 +37,11 @@
     </Reference>
     <Reference Include="SUBMENU_VENTAS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+<<<<<<< HEAD
       <HintPath>..\..\..\Venta\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll</HintPath>
+=======
+      <HintPath>..\SUBMENU_VENTAS\bin\Debug\SUBMENU_VENTAS.dll</HintPath>
+>>>>>>> 431ac65776e60c0ec25695346bd00b32e8ed088b
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

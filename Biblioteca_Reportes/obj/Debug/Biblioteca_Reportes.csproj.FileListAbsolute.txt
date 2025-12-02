@@ -32,7 +32,10 @@ D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\Biblioteca_R
 D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Bibliote.177274E0.Up2Date
 D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.dll
 D:\Escritorio\PROYECTO FINAL_ REPOSITORIO LUIS_FINAL\Proyecto-Final\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.pdb
+<<<<<<< HEAD
 C:\Users\lvasq\Downloads\Report2\Proyecto-Final\Biblioteca_Reportes\bin\Debug\BIBLIOTECA_REGISTRA.dll
 C:\Users\lvasq\Downloads\Report2\Proyecto-Final\Biblioteca_Reportes\bin\Debug\BIBLIOTECA_REGISTRA.pdb
 C:\Users\lvasq\Downloads\Report2\Proyecto-Final\Biblioteca_Reportes\bin\Debug\SUBMENU_VENTAS.dll
 C:\Users\lvasq\Downloads\Report2\Proyecto-Final\Biblioteca_Reportes\bin\Debug\SUBMENU_VENTAS.pdb
+=======
+>>>>>>> 431ac65776e60c0ec25695346bd00b32e8ed088b

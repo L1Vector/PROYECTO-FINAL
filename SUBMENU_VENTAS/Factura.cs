@@ -78,7 +78,11 @@ namespace SUBMENU_VENTAS
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("Código NO existe");
                     Console.ResetColor();
+<<<<<<< HEAD
                     Console.ReadKey();
+=======
+                    System.Threading.Thread.Sleep(700);
+>>>>>>> 431ac65776e60c0ec25695346bd00b32e8ed088b
 
                     Console.SetCursorPosition(10, 16);
                     Console.Write(new string(' ', 40));
@@ -103,7 +107,11 @@ namespace SUBMENU_VENTAS
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write($"Stock insuficiente (MAX {stock})");
                     Console.ResetColor();
+<<<<<<< HEAD
                     Console.ReadKey();
+=======
+                    System.Threading.Thread.Sleep(700);
+>>>>>>> 431ac65776e60c0ec25695346bd00b32e8ed088b
 
                     Console.SetCursorPosition(38, 16);
                     Console.Write(new string(' ', 40));
@@ -152,7 +160,11 @@ namespace SUBMENU_VENTAS
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("ERROR: Solo ingrese S o N");
                     Console.ResetColor();
+<<<<<<< HEAD
                     Console.ReadKey();
+=======
+                    System.Threading.Thread.Sleep(900);
+>>>>>>> 431ac65776e60c0ec25695346bd00b32e8ed088b
 
                     Console.SetCursorPosition(25, 19);
                     Console.Write(new string(' ', 40));

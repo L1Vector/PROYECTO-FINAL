@@ -36,3 +36,12 @@ C:\Users\lvasq\Downloads\Report2\Proyecto-Final\Biblioteca_Reportes\bin\Debug\BI
 C:\Users\lvasq\Downloads\Report2\Proyecto-Final\Biblioteca_Reportes\bin\Debug\BIBLIOTECA_REGISTRA.pdb
 C:\Users\lvasq\Downloads\Report2\Proyecto-Final\Biblioteca_Reportes\bin\Debug\SUBMENU_VENTAS.dll
 C:\Users\lvasq\Downloads\Report2\Proyecto-Final\Biblioteca_Reportes\bin\Debug\SUBMENU_VENTAS.pdb
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.dll
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.pdb
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblioteca_Reportes\bin\Debug\BIBLIOTECA_REGISTRA.pdb
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblioteca_Reportes\bin\Debug\SUBMENU_VENTAS.pdb
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.csproj.AssemblyReference.cache
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.csproj.CoreCompileInputs.cache
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblioteca_Reportes\obj\Debug\Bibliote.177274E0.Up2Date
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.dll
+C:\Users\lvasq\Downloads\PROYECTOFINAL - copia\Biblioteca_Reportes\obj\Debug\Biblioteca_Reportes.pdb

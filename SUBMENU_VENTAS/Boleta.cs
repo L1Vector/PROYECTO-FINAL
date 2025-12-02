@@ -78,7 +78,7 @@ namespace SUBMENU_VENTAS
                     Console.Write("Presione cualquier tecla para reintentar...");
                     Console.ResetColor();
                     Console.ReadKey();
-                    Console.SetCursorPosition(10, 16);
+                    Console.SetCursorPosition(10, 17);
                     Console.Write(new string(' ', 40));
                 }
 
@@ -105,7 +105,7 @@ namespace SUBMENU_VENTAS
                     Console.ResetColor();
                     Console.ReadKey();
 
-                    Console.SetCursorPosition(38, 16);
+                    Console.SetCursorPosition(38, 17);
                     Console.Write(new string(' ', 40));
                 }
 
@@ -157,7 +157,7 @@ namespace SUBMENU_VENTAS
                     Console.ResetColor();
                     Console.ReadKey();
 
-                    Console.SetCursorPosition(25, 19);
+                    Console.SetCursorPosition(25, 20);
                     Console.Write(new string(' ', 40));
                 }
 

@@ -13,9 +13,9 @@ namespace Biblioteca_Reportes
 
             // Título
             Console.SetCursorPosition(Variables.InicioX, Variables.InicioY);
-            Console.WriteLine($"-------------------------------- REPORTE DE {tipoReporte.ToUpper()} -----------------------------------");
+            Console.WriteLine($"-------------------------------- REPORTE DE {tipoReporte.ToUpper()} --------------------------------");
             Console.SetCursorPosition(Variables.InicioX, Variables.InicioY + 1);
-            Console.WriteLine(new string('-', 88));
+            Console.WriteLine(new string('-', 85));
 
             switch (tipoReporte.ToUpper())
             {

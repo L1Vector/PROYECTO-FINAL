@@ -39,8 +39,8 @@ public class ClaseSubMenu
                 else
                 {
                     // Opción normal: Texto Blanco sobre fondo Negro (o el color del fondo)
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Black;
                 }
 
                 // Posiciona y escribe la opción

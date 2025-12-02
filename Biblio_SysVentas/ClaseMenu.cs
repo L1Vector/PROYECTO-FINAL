@@ -23,8 +23,8 @@ namespace Biblio_SysVentas
                 {
                     if (indice == i)
                     {
-                        Console.BackgroundColor = ConsoleColor.Black;  // bloque negro
-                        Console.ForegroundColor = ConsoleColor.White;  // texto blanco
+                        Console.BackgroundColor = ConsoleColor.Green; 
+                        Console.ForegroundColor = ConsoleColor.Black;  
                         Console.SetCursorPosition(j, 3);
                         Console.Write("             ");
                         Console.SetCursorPosition(j + 3, 3);

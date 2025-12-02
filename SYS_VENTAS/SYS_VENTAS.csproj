@@ -41,10 +41,14 @@
     <Reference Include="Biblioteca_Reportes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <HintPath>..\..\Report2\Proyecto-Final\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.dll</HintPath>
 =======
       <HintPath>..\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.dll</HintPath>
 >>>>>>> 431ac65776e60c0ec25695346bd00b32e8ed088b
+=======
+      <HintPath>..\Biblioteca_Reportes\bin\Debug\Biblioteca_Reportes.dll</HintPath>
+>>>>>>> d81a7d75dd8518e93afbaf4caeb5e9dca6ba6eca
     </Reference>
     <Reference Include="Biblio_SysVentas, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
